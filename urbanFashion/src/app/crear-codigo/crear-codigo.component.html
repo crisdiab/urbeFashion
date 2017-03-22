@@ -14,13 +14,19 @@
        <div class="col-sm-3">
          <div class="form-group">
            <label for="periodo">Periodo</label>
+           <pre>
+             {{periodos | json}}
+           </pre>
+           <pre>
+             {{seleccionados | json}}
+           </pre>
            <select class="form-control" id="periodo"
                    required
-                   [(ngModel)]="seleccionados.periodo" name="periodo"
-                   #periodo="ngModel">
-             <option *ngFor="let periodo of periodos" [value]="periodo">{{periodo}}</option>
+                   [(ngModel)]="seleccionados.periodo" name="periodosEncontrados"
+                   #periodosEncontrados="ngModel">
+             <option *ngFor="let periodo of periodos" [value]="periodo.periodo">{{periodo.periodo}}</option>
            </select>
-           <div [hidden]="periodo.valid || periodo.pristine" class="alert alert-danger">
+           <div [hidden]="periodosEncontrados.valid || periodosEncontrados.pristine" class="alert alert-danger">
              Periodo es requerido.
            </div>
          </div>
