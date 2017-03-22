@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CrearCodigoComponent } from './crear-codigo/crear-codigo.component';
+import {RutasAppModule} from "./routes";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CrearCodigoComponent } from './crear-codigo/crear-codigo.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RutasAppModule
   ],
   providers: [],
   bootstrap: [AppComponent]
