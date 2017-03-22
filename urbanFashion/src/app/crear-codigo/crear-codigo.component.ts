@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {TipoPrendaService} from "../Services/tipo-prenda.service";
+
 
 @Component({
   selector: 'app-crear-codigo',
@@ -10,7 +10,6 @@ import {TipoPrendaService} from "../Services/tipo-prenda.service";
 export class CrearCodigoComponent implements OnInit {
 
   constructor(
-              private  _TipoPrendaService:TipoPrendaService,
 
   ) { }
 
