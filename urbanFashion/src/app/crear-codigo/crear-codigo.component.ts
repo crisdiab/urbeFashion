@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import {TipoPrendaService} from "../Services/tipo-prenda.service";
+
 @Component({
   selector: 'app-crear-codigo',
   templateUrl: './crear-codigo.component.html',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearCodigoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+              private  _TipoPrendaService:TipoPrendaService,
+
+  ) { }
 
   ngOnInit() {
   }
