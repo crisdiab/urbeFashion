@@ -5,6 +5,7 @@ import {Routes, RouterModule} from '@angular/router';
 import { ModuleWithProviders }  from '@angular/core';
 import {InicioComponent} from "./inicio/inicio.component";
 import {CrearCodigoComponent} from "./crear-codigo/crear-codigo.component";
+import {ListarCodigosComponent} from "./listar-codigos/listar-codigos.component";
 
 
 
