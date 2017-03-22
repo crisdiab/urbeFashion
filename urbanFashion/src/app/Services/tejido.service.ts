@@ -6,7 +6,7 @@ import {MasterUrlService} from "./master-url.service";
 export class TejidoService {
 
   url:string;
-  modelo:string = 'Cantidad';
+  modelo:string = 'Tejido';
   constructor( private _http:Http,
                private _masterURL:MasterUrlService) {
     this.url = this._masterURL.getUrl();
