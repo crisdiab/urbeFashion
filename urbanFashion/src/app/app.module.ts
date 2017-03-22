@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { CrearCodigoComponent } from './crear-codigo/crear-codigo.component';
 import {RutasAppModule} from "./routes";
 import { InicioComponent } from './inicio/inicio.component';
+import { ListarCodigosComponent } from './listar-codigos/listar-codigos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearCodigoComponent,
-    InicioComponent
+    InicioComponent,
+    ListarCodigosComponent
   ],
   imports: [
     BrowserModule,
