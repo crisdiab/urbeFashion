@@ -14,6 +14,7 @@ import {PrendaService} from "./Services/prenda.service";
 import {TejidoService} from "./Services/tejido.service";
 import {TipoPrendaService} from "./Services/tipo-prenda.service";
 import {PeriodoService} from "./Services/periodo.service";
+import {CodigoService} from "./Services/codigo.service";
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import {PeriodoService} from "./Services/periodo.service";
     PeriodoService,
     PrendaService,
     TejidoService,
+    CodigoService,
     TipoPrendaService
 
   ],
