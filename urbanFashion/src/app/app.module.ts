@@ -21,7 +21,7 @@ import {CodigoService} from "./Services/codigo.service";
     AppComponent,
     CrearCodigoComponent,
     InicioComponent,
-    ListarCodigosComponent
+    ListarCodigosComponent,
   ],
   imports: [
     BrowserModule,

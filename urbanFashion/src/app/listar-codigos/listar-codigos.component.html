@@ -3,7 +3,12 @@
     <div class="col-md-2">
     </div>
     <div class="col-md-8">
+
       <h2>Lista de Códigos</h2>
+      <p>Buscar
+        <input type="text" [(ngModel)]="filtroCodigo">
+      </p>
+
       <table class="table" >
         <thead>
         <tr>
@@ -12,12 +17,12 @@
           <th>Acción</th>
         </tr>
         </thead>
-        <tbody *ngFor="let codigo of codigos">
+        <tbody *ngFor="let codigo of codigos | filter: filtroCodigo">
         <tr>
           <td>{{codigo.codigo}}</td>
           <td>{{codigo.estado}}</td>
           <td>
-            <button type="submit" class="btn btn-block btn-success">Editar</button>
+            <button type="submit" class="btn btn-block btn-info">Cambiar Estado</button>
           </td>
         </tr>
 

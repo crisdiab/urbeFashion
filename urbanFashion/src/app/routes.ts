@@ -14,9 +14,6 @@ export const routes: Routes = [
   {path:'inicio', component: InicioComponent},
   {path:'crear', component: CrearCodigoComponent},
   {path:'listarc', component: ListarCodigosComponent},
-
-
-
 ];
 
 export const RutasAppModule: ModuleWithProviders = RouterModule.forRoot(routes);

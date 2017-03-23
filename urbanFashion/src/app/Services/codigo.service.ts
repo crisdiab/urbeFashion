@@ -17,6 +17,10 @@ export class CodigoService {
     return this._http.get(this.url+this.modelo)
   }
 
+  getCodigo(parametro){
+    return this._http.get(this.url+this.modelo+'?codigo='+parametro)
+  }
+
   getOne(id){
     return this._http.get(this.url+this.modelo+id);
   }
