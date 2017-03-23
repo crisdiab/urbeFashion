@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {PeriodoService} from "../Services/periodo.service";
 import {Response} from "@angular/http";
 import {TejidoService} from "../Services/tejido.service";
+import {CantidadService} from "../Services/cantidad.service";
 
 
 
@@ -25,10 +26,12 @@ export class CrearCodigoComponent implements OnInit {
     prenda:'',
 };
   periodos:any=[];
-  periodosEncontrados:any=[]
+
   tejidos:any=[];
+  cantidades:any=[];
   constructor( private _PeriodoService:PeriodoService,
                private _TejidoService: TejidoService,
+               private _CantidadService: CantidadService
 
   ) { }
 
@@ -66,8 +69,21 @@ export class CrearCodigoComponent implements OnInit {
         (err) => {
           console.log(err);
         }
-      )
+      );
+    //cantidades
 
+    this._CantidadService.get()
+      .subscribe(
+        (res: Response) => {
+          this.cantidades = res.json();
+
+          console.log('cantidades', this.cantidades)
+
+        },
+        (err) => {
+          console.log(err);
+        }
+      )
   }
 
 
