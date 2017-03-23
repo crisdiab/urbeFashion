@@ -25,8 +25,16 @@ export class CantidadService {
   }
 
   update(parametros,id){
+    console.log('llega a actualizar con estos parametros ',parametros)
+
 
     return this._http.put(this.url+this.modelo+'/'+id,parametros);
+  }
+  getCantidad(idPrenda,idPeriodo){
+    console.log('llea esta id prenda',idPrenda)
+    console.log('llea esta id periodo',idPeriodo)
+
+    return this._http.get(this.url+this.modelo+'?idPrenda='+idPrenda+'&idPeriodo='+idPeriodo);
   }
 
   delete(id){
