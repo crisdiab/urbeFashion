@@ -20,6 +20,10 @@ export class TejidoService {
     return this._http.get(this.url+this.modelo+id);
   }
 
+  getTejido(codigoTejido){
+    return this._http.get(this.url+this.modelo+'?codigo='+codigoTejido);
+  }
+
   create(parametros){
     return this._http.post(this.url+this.modelo,parametros);
   }

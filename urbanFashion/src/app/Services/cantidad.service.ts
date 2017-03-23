@@ -30,11 +30,12 @@ export class CantidadService {
 
     return this._http.put(this.url+this.modelo+'/'+id,parametros);
   }
-  getCantidad(idPrenda,idPeriodo){
-    console.log('llea esta id prenda',idPrenda)
-    console.log('llea esta id periodo',idPeriodo)
+  getCantidad(idPrenda,idPeriodo,idTejido){
+    console.log('llega esta id prenda',idPrenda);
+    console.log('llega esta id periodo',idPeriodo);
+    console.log('llega esta id tejido',idTejido);
 
-    return this._http.get(this.url+this.modelo+'?idPrenda='+idPrenda+'&idPeriodo='+idPeriodo);
+    return this._http.get(this.url+this.modelo+'?idPrenda='+idPrenda+'&idPeriodo='+idPeriodo+'&idTejido='+idTejido);
   }
 
   delete(id){
