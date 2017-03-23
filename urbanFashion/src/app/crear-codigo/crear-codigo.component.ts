@@ -3,6 +3,8 @@ import {PeriodoService} from "../Services/periodo.service";
 import {Response} from "@angular/http";
 import {TejidoService} from "../Services/tejido.service";
 import {CantidadService} from "../Services/cantidad.service";
+import {PrendaService} from "../Services/prenda.service";
+import {NgForm} from "@angular/forms";
 
 
 
@@ -26,12 +28,15 @@ export class CrearCodigoComponent implements OnInit {
     prenda:'',
 };
   periodos:any=[];
-
   tejidos:any=[];
   cantidades:any=[];
+  prendas:any=[];
+  codPeriodo:String='';
+
   constructor( private _PeriodoService:PeriodoService,
                private _TejidoService: TejidoService,
-               private _CantidadService: CantidadService
+               private _CantidadService: CantidadService,
+               private  _PrendaService: PrendaService
 
   ) { }
 
@@ -42,12 +47,9 @@ export class CrearCodigoComponent implements OnInit {
         (res: Response) => {
           this.periodos = res.json();
           //
-
-
           console.log('periodos cero',res.json());
 
-          // var codP= this.periodos[0].periodo.substring(2,4);
-          // console.log('peridoo separado',codP)
+
 
         },
         (err) => {
@@ -83,7 +85,28 @@ export class CrearCodigoComponent implements OnInit {
         (err) => {
           console.log(err);
         }
-      )
+      );
+    this._PrendaService.get()
+      .subscribe(
+        (res: Response) => {
+          this.prendas = res.json();
+
+          console.log('prendas', this.prendas)
+
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+  }
+
+  crearCodigo(formulario: NgForm){
+    console.log('llego este formulario ',formulario);
+    console.log('valor del periodo'+ formulario.value.periodosEncontrados)
+    var codP= formulario.value.periodosEncontrados.substring(2,4);
+    var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2;
+    console.log('codigo parcial generado'+ codigoGenerado);
+    // console.log('peridoo separado',codP)
   }
 
 

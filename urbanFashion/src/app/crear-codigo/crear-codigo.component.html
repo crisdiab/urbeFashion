@@ -14,12 +14,7 @@
        <div class="col-sm-3">
          <div class="form-group">
            <label for="periodo">Periodo</label>
-           <pre>
-             {{periodos | json}}
-           </pre>
-           <pre>
-             {{seleccionados | json}}
-           </pre>
+
            <select class="form-control" id="periodo"
                    required
                    [(ngModel)]="seleccionados.periodo" name="periodosEncontrados"
@@ -32,32 +27,32 @@
          </div>
        </div>
      </div>
-      <!--<div class="form-group">-->
-        <!--<h3>Seleeccione una Prenda</h3>-->
-        <!--<label for="prenda">Prenda</label>-->
-        <!--<select class="form-control" id="prenda"-->
-                <!--required-->
-                <!--[(ngModel)]="codigoPrenda" name="prenda"-->
-                <!--#prenda="ngModel">-->
-          <!--<option *ngFor="let prenda of prendas" [value]="prenda">{{prenda}}</option>-->
-        <!--</select>-->
-        <!--<div [hidden]="prenda.valid || prenda.pristine" class="alert alert-danger">-->
-          <!--Debe seleccionar una prenda.-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="form-group">-->
-        <!--<h3>Seleeccione una Tipo de tejido</h3>-->
-        <!--<label for="tejido">Tejido</label>-->
-        <!--<select class="form-control" id="tejido"-->
-                <!--required-->
-                <!--[(ngModel)]="codigoTejido" name="tejido"-->
-                <!--#tejido="ngModel">-->
-          <!--<option *ngFor="let tejido of tejidos" [value]="tejido">{{tejidos}}</option>-->
-        <!--</select>-->
-        <!--<div [hidden]="power.valid || power.pristine" class="alert alert-danger">-->
-          <!--Debe seleccionar una prenda.-->
-        <!--</div>-->
-      <!--</div>-->
+      <div class="form-group">
+        <h3>Seleeccione una Prenda</h3>
+        <label for="prenda">Prenda</label>
+        <select class="form-control" id="prenda"
+                required
+                [(ngModel)]="seleccionados.prenda" name="prenda2"
+                #prenda2="ngModel">
+          <option *ngFor="let prenda of prendas" [value]="prenda.codigo">{{prenda.nombre}}</option>
+        </select>
+        <div [hidden]="prenda2.valid || prenda2.pristine" class="alert alert-danger">
+          Debe seleccionar una prenda.
+        </div>
+      </div>
+      <div class="form-group">
+        <h3>Seleeccione una Tipo de tejido</h3>
+        <label for="tejido">Tejido</label>
+        <select class="form-control" id="tejido"
+                required
+                [(ngModel)]="seleccionados.tejido" name="tejido2"
+                #tejido2="ngModel">
+          <option *ngFor="let tejido of tejidos" [value]="tejido.codigo">{{tejido.nombre}}</option>
+        </select>
+        <div [hidden]="tejido2.valid || tejido2.pristine" class="alert alert-danger">
+          Debe seleccionar un tipo de Tejido.
+        </div>
+      </div>
 
 
 
