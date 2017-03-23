@@ -118,12 +118,14 @@ export class CrearCodigoComponent implements OnInit {
     // console.log('valor del periodo', formulario.value.periodosEncontrados)
     // console.log('valor de la prenda', formulario.value.prenda2)
    var codP= formulario.value.periodosEncontrados.substring(2,4);
-
+    //<editor-fold desc="Buscar el id del periodo">
     //buscar id del periodo
     this._PeriodoService.getPerido(formulario.value.periodosEncontrados)
       .subscribe(
         (res: Response) => {
+          console.log('periodo',res.json()[0].id)
           this.idPeriodo=res.json()[0].id;
+          //<editor-fold desc="Buscar id de la prenda">
           //buscar id Prenda
           this._PrendaService.getPrenda(formulario.value.prenda2)
             .subscribe(
@@ -131,18 +133,21 @@ export class CrearCodigoComponent implements OnInit {
                 console.log('prenda:',res.json()[0].id);
                 this.idPrenda=res.json()[0].id;
 
+                //<editor-fold desc="Buscar  id del tejido">
                 this._TejidoService.getTejido(formulario.value.tejido2)
                   .subscribe(
                     (res: Response) => {
                       console.log('tejido:',res.json()[0].id);
                       this.idTejido=res.json()[0].id;
 
+                      //<editor-fold desc="Buscar Cantidad">
                       //Buscar Cantidad
                       this._CantidadService.getCantidad(this.idPrenda,this.idPeriodo, this.idTejido)
                         .subscribe(
                           (res: Response) => {
                             console.log('cantidad:',res.json());
                             this.cantidadVector=res.json();
+
                             if(this.cantidadVector.length==0){
                               //crear cantidad con id de la prenda y periodo
                               this.nuevaCantidad.cantidad='0001';
@@ -159,6 +164,24 @@ export class CrearCodigoComponent implements OnInit {
                                     console.log(err);
                                   }
                                 )
+                              var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+'0001';
+                              console.log('codigo parcial generado'+ codigoGenerado);
+                              this.nuevoCodigo.codigo=codigoGenerado;
+                              this._CodigoService.create(this.nuevoCodigo)
+                                .subscribe(
+                                  (res: Response) => {
+
+                                    //
+                                    console.log('codigo creado con ',res.json());
+
+
+
+
+                                  },
+                                  (err) => {
+                                    console.log(err);
+                                  }
+                                )
 
                             }else{
                               this.cantidadEncontrada.cantidad=this.cantidadVector[0].cantidad;
@@ -169,6 +192,7 @@ export class CrearCodigoComponent implements OnInit {
                               var actualizar={
                                 cantidad:''
                               };
+                              
                               switch(cant.length){
                                 case 1:
                                   this.cantidadActualizada='000'+cant;
@@ -198,13 +222,6 @@ export class CrearCodigoComponent implements OnInit {
                                               console.log(err);
                                             }
                                           )
-
-                                        // ;
-
-
-
-
-
                                       },
                                       (err) => {
                                         console.log(err);
@@ -342,21 +359,27 @@ export class CrearCodigoComponent implements OnInit {
                             console.log(err);
                           }
                         );
+                      //</editor-fold >
+
 
                     },
                     (err) => {
                       console.log(err);
                     }
                   );
+                //</editor-fold >
+
               },
               (err) => {
                 console.log(err);
               }
             );
+          //</editor-fold >
         },
         (err) => {
           console.log(err);
         }
       );
+    //</editor-fold >
   }
 }
