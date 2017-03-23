@@ -22,6 +22,7 @@ export class CodigoService {
   }
 
   create(parametros){
+    console.log('llega a crear con estos parametros'+parametros)
     return this._http.post(this.url+this.modelo,parametros);
   }
 

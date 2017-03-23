@@ -16,8 +16,12 @@ export class PrendaService {
     return this._http.get(this.url+this.modelo)
   }
 
+
   getOne(id){
     return this._http.get(this.url+this.modelo+id);
+  }
+  getPrenda(codigoPrenda){
+    return this._http.get(this.url+this.modelo+'?codigo='+codigoPrenda);
   }
 
   create(parametros){

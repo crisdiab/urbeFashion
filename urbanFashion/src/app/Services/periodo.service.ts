@@ -19,6 +19,9 @@ export class PeriodoService {
   getOne(id){
     return this._http.get(this.url+this.modelo+id);
   }
+  getPerido(parametro){
+    return this._http.get(this.url+this.modelo+'?periodo='+parametro);
+  }
 
   create(parametros){
     return this._http.post(this.url+this.modelo,parametros);

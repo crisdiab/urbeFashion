@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13186d76-d75a-4668-85b9-fb5102bc200f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/package.json" afterPath="$PROJECT_DIR$/urbanFashion/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/app.module.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.html" afterPath="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/Services/cantidad.service.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/Services/cantidad.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/Services/codigo.service.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/Services/codigo.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/Services/periodo.service.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/Services/periodo.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/Services/prenda.service.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/Services/prenda.service.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.html" afterPath="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,33 +24,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="listar-codigos.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="43" column="49" lean-forward="false" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="crear-codigo.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="87">
-              <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+            <state relative-caret-position="102">
+              <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="listar-codigos.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.html">
+      <file leaf-file-name="crear-codigo.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="19" column="83" lean-forward="false" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
+            <state relative-caret-position="-342">
+              <caret line="140" column="34" lean-forward="false" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="34" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+                <element signature="e#721#765#0" expanded="false" />
+                <element signature="e#785#834#0" expanded="false" />
+                <element signature="n#!!block;n#ngOnInit#0;n#CrearCodigoComponent#0" expanded="false" />
+                <element signature="e#3480#11920#0" expanded="false" />
+                <element signature="e#5546#6516#0" expanded="false" />
+                <element signature="e#7258#8226#0" expanded="false" />
+                <element signature="e#8967#9935#0" expanded="false" />
+                <element signature="e#10672#11640#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="codigo.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/codigo.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cantidad.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/cantidad.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="70" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="prenda.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/prenda.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -73,19 +102,19 @@
         <option value="$PROJECT_DIR$/urbanFashion/src/index.html" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/master-url.service.ts" />
-        <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/cantidad.service.ts" />
-        <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/prenda.service.ts" />
-        <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/periodo.service.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/tipo-prenda.service.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/tejido.service.ts" />
-        <option value="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/inicio/inicio.component.html" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/routes.ts" />
-        <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/codigo.service.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.html" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.html" />
+        <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/periodo.service.ts" />
+        <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/prenda.service.ts" />
+        <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/codigo.service.ts" />
+        <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/cantidad.service.ts" />
+        <option value="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts" />
+        <option value="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.html" />
       </list>
     </option>
   </component>
@@ -100,9 +129,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1924" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -119,7 +147,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -212,8 +239,35 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urbeFashion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urbeFashion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urbanFashion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crear-codigo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -313,41 +367,34 @@
       <workItem from="1490188228938" duration="2744000" />
       <workItem from="1490191297104" duration="3449000" />
       <workItem from="1490195899516" duration="16000" />
+      <workItem from="1490276661468" duration="13934000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21233000" />
+    <option name="totallyTimeSpent" value="35167000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="0" width="1924" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22181553" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33777776" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298647" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,14 +408,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Examen-twj-LaraCristian/examenArtistas_angular/src/app/app.module.ts" />
     <entry file="file://$PROJECT_DIR$/../Examen-twj-LaraCristian/examenArtistas_angular/src/app/app.component.html" />
     <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -378,7 +424,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -422,7 +467,7 @@
         <state relative-caret-position="204">
           <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -445,6 +490,14 @@
           <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="33" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#721#765#0" expanded="false" />
+            <element signature="e#785#834#0" expanded="false" />
+            <element signature="n#!!block;n#ngOnInit#0;n#CrearCodigoComponent#0" expanded="false" />
+            <element signature="e#3480#11920#0" expanded="false" />
+            <element signature="e#5546#6516#0" expanded="false" />
+            <element signature="e#7258#8226#0" expanded="false" />
+            <element signature="e#8967#9935#0" expanded="false" />
+            <element signature="e#10672#11640#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -490,6 +543,14 @@
           <caret line="9" column="33" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="33" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#721#765#0" expanded="false" />
+            <element signature="e#785#834#0" expanded="false" />
+            <element signature="n#!!block;n#ngOnInit#0;n#CrearCodigoComponent#0" expanded="false" />
+            <element signature="e#3480#11920#0" expanded="false" />
+            <element signature="e#5546#6516#0" expanded="false" />
+            <element signature="e#7258#8226#0" expanded="false" />
+            <element signature="e#8967#9935#0" expanded="false" />
+            <element signature="e#10672#11640#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -530,7 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -554,16 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/cantidad.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/tejido.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -576,16 +626,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../Examen-twj-LaraCristian/examenArtistas_angular/src/app/inicio/inicio.component.html" />
     <entry file="file://$PROJECT_DIR$/../Examen-twj-LaraCristian/examenArtistas_angular/src/app/inicio/inicio.component.ts" />
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/prenda.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/inicio/inicio.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -603,32 +643,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/periodo.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-559">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#43#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/tipo-prenda.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-522">
           <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-58">
-          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -637,7 +657,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,7 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -653,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11">
           <caret line="10" column="80" lean-forward="false" selection-start-line="10" selection-start-column="80" selection-end-line="10" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -662,35 +679,17 @@
         <state relative-caret-position="1073">
           <caret line="37" column="17" lean-forward="false" selection-start-line="37" selection-start-column="17" selection-end-line="37" selection-end-column="17" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/codigo.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="23" column="21" lean-forward="true" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="1462">
           <caret line="43" column="49" lean-forward="false" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -700,6 +699,74 @@
         <state relative-caret-position="174">
           <caret line="19" column="83" lean-forward="false" selection-start-line="19" selection-start-column="83" selection-end-line="19" selection-end-column="83" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/periodo.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="22" column="49" lean-forward="false" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/prenda.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Examen-twj-LaraCristian/examenArtistas_angular/src/app/Rutas/artista/artista.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1326">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#58#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/cantidad.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="27" column="4" lean-forward="false" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/codigo.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="24" column="51" lean-forward="false" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342">
+          <caret line="140" column="34" lean-forward="false" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#721#765#0" expanded="false" />
+            <element signature="e#785#834#0" expanded="false" />
+            <element signature="n#!!block;n#ngOnInit#0;n#CrearCodigoComponent#0" expanded="false" />
+            <element signature="e#3480#11920#0" expanded="false" />
+            <element signature="e#5546#6516#0" expanded="false" />
+            <element signature="e#7258#8226#0" expanded="false" />
+            <element signature="e#8967#9935#0" expanded="false" />
+            <element signature="e#10672#11640#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
