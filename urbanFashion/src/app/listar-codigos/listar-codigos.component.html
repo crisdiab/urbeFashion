@@ -22,7 +22,41 @@
           <td>{{codigo.codigo}}</td>
           <td>{{codigo.estado}}</td>
           <td>
-            <button type="submit" class="btn btn-block btn-info">Cambiar Estado</button>
+            <div class="row animated flipInY">
+
+              <div class="col-sm-6">
+                <button class="btn btn-block btn-info"
+                        (click)="codigo.formularioCerrado = !codigo.formularioCerrado"
+                >Cambiar Estado</button>
+              </div>
+              <div class="col-sm-6">
+                <div class="div" [hidden]="codigo.formularioCerrado">
+
+                  <form action="">
+                    <form class="animated bounceIn" (ngSubmit)="actualizarEstadoCodigo(codigo)" #NuevoEstadoForm="ngForm">
+                      <div class="form-group">
+                        <select class="form-control"
+                                [(ngModel)]="codigo.estado" name="estado"
+                                #estado="ngModel">
+                          <option>pendiente</option>
+                          <option>aprobado</option>
+                          <option>reprobado</option>
+                        </select>
+                      </div>
+
+                      <button type="submit" class="btn btn-block btn-success">Update
+                      </button>
+
+                      <button type="button"
+                              class="btn btn-block btn-warning"
+                              (click)="codigo.formularioCerrado = !codigo.formularioCerrado">
+                        Cancelar
+                      </button>
+                    </form>
+                  </form>
+                </div>
+              </div>
+            </div>
           </td>
         </tr>
 

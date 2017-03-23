@@ -21,7 +21,11 @@ export class ListarCodigosComponent implements OnInit {
     this._CodigoService.get()
       .subscribe(
         (res: Response) => {
-          this.codigos = res.json();
+          this.codigos = res.json()
+            .map((value) => {
+              value.formularioCerrado = true;
+              return value;
+            });
 
           console.log('codigos',this.codigos);
           //console.log('codigos cero',this.codigos[0].codigo);
@@ -33,6 +37,31 @@ export class ListarCodigosComponent implements OnInit {
           console.log(err);
         }
       )
+  }
+
+  actualizarEstadoCodigo(codigo:any){
+    console.log('entro en actualizar codigo');
+    console.log(codigo);
+    console.log(codigo.id);
+
+    this._CodigoService.update(codigo,codigo.id)
+      .subscribe(
+
+        (res: Response) => {
+
+          console.log("No hubo Errores");
+          console.log(res);
+          codigo.formularioCerrado = !codigo.formularioCerrado;
+          console.log("Respuesta:", res.json());
+
+        },
+
+        (err) => {
+          console.log("Ocurrio un error", err);
+        }
+      );
+
+
   }
 
 }
