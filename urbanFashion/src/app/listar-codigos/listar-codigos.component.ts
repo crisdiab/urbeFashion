@@ -11,7 +11,12 @@ import {Response} from "@angular/http";
 export class ListarCodigosComponent implements OnInit {
 
   codigos:any=[];
-  filtroCodigo:String='';
+  deshabilitar={
+    botonEditar:true,
+  }
+  pruebas:any=[{codigo:'324',estado:'pendiente'},{codigo:'324',estado:'pendiente'}];
+  users: any[] = [{ name: 'John',apellido:'lara' }, { name: 'Jane',apellido:'loya' }, { name: 'Mario',apellido:'sarsoza' }];
+  userFilter: any = { codigo: '' ,estado:''};
 
   constructor(private _CodigoService:CodigoService,
   ) { }
@@ -43,7 +48,9 @@ export class ListarCodigosComponent implements OnInit {
     console.log('entro en actualizar codigo');
     console.log(codigo);
     console.log(codigo.id);
-
+    // console.log('formulario cerrado estado',codigo.formularioCerrado)
+    // codigo.formularioCerrado= !codigo.formularioCerrado;
+    // console.log('formulario cerrado estado',codigo.formularioCerrado)
     this._CodigoService.update(codigo,codigo.id)
       .subscribe(
 
