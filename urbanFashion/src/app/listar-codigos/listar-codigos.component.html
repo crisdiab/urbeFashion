@@ -6,38 +6,37 @@
 
       <h2>Lista de Códigos</h2>
 
-
       <table class="table table-bordered " >
         <thead>
         <tr>
           <th>
             <div class="row">
-              <div class="col-sm-3">
-
-
-                Código
-              </div>
+              <div class="col-sm-3">Código</div>
               <div class="col-sm-3">
                 <input class="colorLetra" type="text" [(ngModel)]="userFilter.codigo" placeholder="buscar">
               </div>
-              <!--<div class="col-sm-4"></div>-->
             </div>
-
-             </th>
+          </th>
           <th>
             <div class="row">
               <div class="col-sm-3">
-
-                <div class="divider"></div>
-                Estado
-              </div>
+                <div class="divider"></div>Estado</div>
               <div class="col-sm-3">
                 <input class="colorLetra" type="text" [(ngModel)]="userFilter.estado" placeholder="buscar">
               </div>
-              <!--<div class="col-sm-4"></div>-->
             </div>
 
             </th>
+          <th>
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="divider"></div>Fecha</div>
+              <div class="col-sm-3">
+                <input class="colorLetra" type="text" [(ngModel)]="userFilter.createdAt" placeholder="buscar">
+              </div>
+            </div>
+
+          </th>
           <th>Acción</th>
         </tr>
         </thead>
@@ -45,10 +44,7 @@
         <tr>
           <td>{{codigo.codigo}}</td>
           <td>
-
-
             <div [hidden]="!codigo.formularioCerrado">
-
               {{codigo.estado}}
             </div>
 
@@ -80,6 +76,7 @@
               </div>
             </div>
           </td>
+          <td>{{codigo.createdAt}}</td>
           <td>
             <div class="row animated flipInY">
 
@@ -92,7 +89,6 @@
             </div>
           </td>
         </tr>
-
         </tbody>
       </table>
     </div>

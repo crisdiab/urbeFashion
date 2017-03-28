@@ -16,7 +16,7 @@ export class ListarCodigosComponent implements OnInit {
   }
   pruebas:any=[{codigo:'324',estado:'pendiente'},{codigo:'324',estado:'pendiente'}];
 
-  userFilter: any = { codigo: '' ,estado:''};
+  userFilter: any = { codigo:'', estado:'', createdAt:''};
 
   constructor(private _CodigoService:CodigoService,
   ) { }
@@ -68,8 +68,5 @@ export class ListarCodigosComponent implements OnInit {
           console.log("Ocurrio un error", err);
         }
       );
-
-
   }
-
 }
