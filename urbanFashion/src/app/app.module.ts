@@ -15,6 +15,7 @@ import {TejidoService} from "./Services/tejido.service";
 import {TipoPrendaService} from "./Services/tipo-prenda.service";
 import {PeriodoService} from "./Services/periodo.service";
 import {CodigoService} from "./Services/codigo.service";
+import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {CodigoService} from "./Services/codigo.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    RutasAppModule
+    RutasAppModule,
+    Ng2FilterPipeModule
   ],
   providers: [
     CantidadService,
