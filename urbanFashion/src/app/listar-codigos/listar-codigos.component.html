@@ -1,8 +1,8 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-1">
     </div>
-    <div class="col-md-8">
+    <div class="col-md-10">
 
       <h2>Lista de Códigos</h2>
 
@@ -76,7 +76,7 @@
               </div>
             </div>
           </td>
-          <td>{{codigo.createdAt}}</td>
+          <td>{{codigo.createdAt | date:'dd/MM/yyyy'}}</td>
           <td>
             <div class="row animated flipInY">
 
@@ -92,7 +92,7 @@
         </tbody>
       </table>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-1">
     </div>
   </div>
 </div>

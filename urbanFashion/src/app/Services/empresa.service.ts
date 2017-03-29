@@ -16,7 +16,7 @@ export class EmpresaService {
   get(){
     return this._http.get(this.url+this.modelo)
   }
-  
+
   getOne(id){
     return this._http.get(this.url+this.modelo+id);
   }
@@ -27,7 +27,6 @@ export class EmpresaService {
   }
 
   update(parametros,id){
-
     return this._http.put(this.url+this.modelo+'/'+id,parametros);
   }
 

@@ -6,6 +6,8 @@ import {CantidadService} from "../Services/cantidad.service";
 import {PrendaService} from "../Services/prenda.service";
 import {NgForm} from "@angular/forms";
 import {CodigoService} from "../Services/codigo.service";
+import {EmpresaService} from "../Services/empresa.service";
+import {DepartamentoService} from "../Services/departamento.service";
 
 
 
@@ -22,9 +24,11 @@ export class CrearCodigoComponent implements OnInit {
     NuevoCodigoFormSubmitButton: false
   };
   seleccionados = {
-    tejido:'',
     periodo:'',
+    empresa:'',
+    departamento:'',
     prenda:'',
+    tejido:''
   };
   nuevaCantidad={
     cantidad:'',
@@ -37,9 +41,12 @@ export class CrearCodigoComponent implements OnInit {
   };
 
   periodos:any=[];
+  empresas:any=[];
+  departamentos:any=[];
+  prendas:any=[];
   tejidos:any=[];
   cantidades:any=[];
-  prendas:any=[];
+
   cantidadEncontrada={
     id:0,
     cantidad:''
@@ -52,6 +59,8 @@ export class CrearCodigoComponent implements OnInit {
   cantidadActualizada='';
 
   constructor( private _PeriodoService:PeriodoService,
+               private _EmpresaService:EmpresaService,
+               private _DepartamentoService:DepartamentoService,
                private _TejidoService: TejidoService,
                private _CantidadService: CantidadService,
                private _PrendaService: PrendaService,
@@ -60,47 +69,43 @@ export class CrearCodigoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  //  llamar a todos los periodos
+    // Llamar a todos los periodos
     this._PeriodoService.get()
       .subscribe(
         (res: Response) => {
           this.periodos = res.json();
-          //
-          console.log('periodos cero',res.json());
+          console.log('periodos',res.json());
         },
         (err) => {
           console.log(err);
         }
       );
 
-    //tipo de tejido
-    this._TejidoService.get()
+    // Llamar a todas las empresas
+    this._EmpresaService.get()
       .subscribe(
         (res: Response) => {
-          this.tejidos = res.json();
-
-         console.log('tejidos', this.tejidos)
+          this.empresas = res.json();
+          console.log('empresas',res.json());
         },
         (err) => {
           console.log(err);
         }
       );
 
-    //cantidades
-    this._CantidadService.get()
+    // Llamar a todos los departamentos
+    this._DepartamentoService.get()
       .subscribe(
         (res: Response) => {
-          this.cantidades = res.json();
-
-          console.log('cantidades', this.cantidades)
-
+          this.departamentos = res.json();
+          console.log('departamentos',res.json());
         },
         (err) => {
           console.log(err);
         }
       );
 
-    //prendas
+    // Llamar a todas las prendas
     this._PrendaService.get()
       .subscribe(
         (res: Response) => {
@@ -111,6 +116,33 @@ export class CrearCodigoComponent implements OnInit {
           console.log(err);
         }
       );
+
+    // Llamar a todos los tejidos
+    this._TejidoService.get()
+      .subscribe(
+        (res: Response) => {
+          this.tejidos = res.json();
+          console.log('tejidos', this.tejidos)
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+
+    // Llamar a todas las cantidades
+    this._CantidadService.get()
+      .subscribe(
+        (res: Response) => {
+          this.cantidades = res.json();
+          console.log('cantidades', this.cantidades)
+
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
+
+
   }
 
   crearCodigo(formulario: NgForm){
@@ -192,7 +224,7 @@ export class CrearCodigoComponent implements OnInit {
                               var actualizar={
                                 cantidad:''
                               };
-                              
+
                               switch(cant.length){
                                 case 1:
                                   this.cantidadActualizada='000'+cant;

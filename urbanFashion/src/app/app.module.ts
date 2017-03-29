@@ -12,10 +12,11 @@ import {CantidadService} from "./Services/cantidad.service";
 import {MasterUrlService} from "./Services/master-url.service";
 import {PrendaService} from "./Services/prenda.service";
 import {TejidoService} from "./Services/tejido.service";
-import {TipoPrendaService} from "./Services/tipo-prenda.service";
 import {PeriodoService} from "./Services/periodo.service";
 import {CodigoService} from "./Services/codigo.service";
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
+import {EmpresaService} from "./Services/empresa.service";
+import {DepartamentoService} from "./Services/departamento.service";
 
 @NgModule({
   declarations: [
@@ -32,14 +33,14 @@ import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
     Ng2FilterPipeModule
   ],
   providers: [
-    CantidadService,
     MasterUrlService,
     PeriodoService,
+    EmpresaService,
+    DepartamentoService,
     PrendaService,
     TejidoService,
-    CodigoService,
-    TipoPrendaService
-
+    CantidadService,
+    CodigoService
   ],
   bootstrap: [AppComponent]
 })

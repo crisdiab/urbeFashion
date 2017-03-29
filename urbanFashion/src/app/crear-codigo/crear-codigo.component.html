@@ -1,121 +1,124 @@
-<h1>{{titulo}}</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-1"></div>
 
-<pre>
-  <h1 align="center">{{nuevoCodigo.codigo }}</h1>
-</pre>
+    <div class="col-sm-10">
 
-<div class="row">
-  <div class="col-md-6">
-    <form class="animated bounceIn" (ngSubmit)="crearCodigo(NuevoCodigoForm)" #NuevoCodigoForm="ngForm">
+      <h1>{{titulo}}</h1>
+
+      <pre>
+        <h1 align="center">{{nuevoCodigo.codigo }}</h1>
+      </pre>
 
       <div class="row">
-        <div class="form-group">
-          <div class="col-sm-6">
-            <label for="periodo">Periodo</label>
-          </div>
-          <div class="col-sm-6">
-            <select class="form-control" id="periodo"
-                    required
-                    [(ngModel)]="seleccionados.periodo" name="periodosEncontrados"
-                    #periodosEncontrados="ngModel">
-              <option *ngFor="let periodo of periodos" [value]="periodo.periodo">{{periodo.periodo}}</option>
-            </select>
-            <div [hidden]="periodosEncontrados.valid || periodosEncontrados.pristine" class="alert alert-danger">
-              Periodo es requerido.
+
+        <div class="col-md-6"></div>
+
+        <div class="col-md-6">
+          <form class="animated bounceIn" (ngSubmit)="crearCodigo(NuevoCodigoForm)" #NuevoCodigoForm="ngForm">
+
+
+
+            <div class="form-horizontal">
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="periodo">Periodo</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="periodo"
+                          required
+                          [(ngModel)]="seleccionados.periodo" name="periodosEncontrados"
+                          #periodosEncontrados="ngModel">
+                    <option *ngFor="let periodo of periodos" [value]="periodo.periodo">{{periodo.periodo}}</option>
+                  </select>
+                  <div [hidden]="periodosEncontrados.valid || periodosEncontrados.pristine" class="alert alert-danger">
+                    Periodo es requerido.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="empresa">Empresa</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="empresa"
+                          required
+                          [(ngModel)]="seleccionados.empresa" name="empresa2"
+                          #empresa2="ngModel">
+                    <option *ngFor="let empresa of empresas" [value]="empresa.codigo">{{empresa.nombre}}</option>
+                  </select>
+                  <div [hidden]="empresa2.valid || empresa2.pristine" class="alert alert-danger">
+                    Debe seleccionar una empresa.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="departamento">Departamento</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="departamento"
+                          required
+                          [(ngModel)]="seleccionados.departamento" name="departamento2"
+                          #departamento2="ngModel">
+                    <option *ngFor="let departamento of departamentos" [value]="departamento.codigo">{{departamento.nombre}}</option>
+                  </select>
+                  <div [hidden]="departamento2.valid || departamento2.pristine" class="alert alert-danger">
+                    Debe seleccionar un departamento.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="prenda">Prenda</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="prenda"
+                          required
+                          [(ngModel)]="seleccionados.prenda" name="prenda2"
+                          #prenda2="ngModel">
+                    <option *ngFor="let prenda of prendas" [value]="prenda.codigo">{{prenda.nombre}}</option>
+                  </select>
+                  <div [hidden]="prenda2.valid || prenda2.pristine" class="alert alert-danger">
+                    Debe seleccionar una prenda.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="tejido">Tejido</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="tejido"
+                          required
+                          [(ngModel)]="seleccionados.tejido" name="tejido2"
+                          #tejido2="ngModel">
+                    <option *ngFor="let tejido of tejidos" [value]="tejido.codigo">{{tejido.nombre}}</option>
+                  </select>
+                  <div [hidden]="tejido2.valid || tejido2.pristine" class="alert alert-danger">
+                    Debe seleccionar un tipo de Tejido.
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                  <button [disabled]="disabledButtons.NuevoCodigoFormSubmitButton||!NuevoCodigoForm.valid" type="submit"
+                          class="btn btn-block btn-success">Crear
+                  </button>
+                </div>
+              </div>
+
             </div>
-          </div>
+
+
+          </form>
+
+          <h3>Para ver todos los codigos registrados <span> <button [routerLink]="['/listarc']" class="btn btn-link">Click Aqui</button></span> </h3>
+
         </div>
       </div>
 
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-6">
-            <label for="empresa">Empresa</label>
-          </div>
-          <div class="col-sm-6">
-            <select class="form-control" id="empresa"
-                    required
-                    [(ngModel)]="seleccionados.empresa" name="empresa2"
-                    #empresa2="ngModel">
-              <option *ngFor="let empresa of empresas" [value]="empresa.codigo">{{empresa.nombre}}</option>
-            </select>
-            <div [hidden]="empresa2.valid || empresa2.pristine" class="alert alert-danger">
-              Debe seleccionar una empresa.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-6">
-            <label for="departamento">Departamento</label>
-          </div>
-          <div class="col-sm-6">
-            <select class="form-control" id="departamento"
-                    required
-                    [(ngModel)]="seleccionados.departamento" name="departamento2"
-                    #departamento2="ngModel">
-              <option *ngFor="let departamento of departamentos" [value]="departamento.codigo">{{departamento.nombre}}</option>
-            </select>
-            <div [hidden]="departamento2.valid || departamento2.pristine" class="alert alert-danger">
-              Debe seleccionar un departamento.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-6">
-            <label for="prenda">Prenda</label>
-          </div>
-          <div class="col-sm-6">
-            <select class="form-control" id="prenda"
-                    required
-                    [(ngModel)]="seleccionados.prenda" name="prenda2"
-                    #prenda2="ngModel">
-              <option *ngFor="let prenda of prendas" [value]="prenda.codigo">{{prenda.nombre}}</option>
-            </select>
-            <div [hidden]="prenda2.valid || prenda2.pristine" class="alert alert-danger">
-              Debe seleccionar una prenda.
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-6">
-            <label for="tejido">Tejido</label>
-          </div>
-          <div class="col-sm-6">
-            <select class="form-control" id="tejido"
-                    required
-                    [(ngModel)]="seleccionados.tejido" name="tejido2"
-                    #tejido2="ngModel">
-              <option *ngFor="let tejido of tejidos" [value]="tejido.codigo">{{tejido.nombre}}</option>
-            </select>
-            <div [hidden]="tejido2.valid || tejido2.pristine" class="alert alert-danger">
-              Debe seleccionar un tipo de Tejido.
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <button [disabled]="disabledButtons.NuevoCodigoFormSubmitButton||!NuevoCodigoForm.valid" type="submit"
-              class="btn btn-block btn-success">Crear
-      </button>
-    </form>
-
-    <h3>Para ver todos los codigos registrados <span> <button [routerLink]="['/listarc']" class="btn btn-link">Click Aqui</button></span> </h3>
-
+    </div>
+    <div class="col-sm-1"></div>
   </div>
 </div>
+
+
 
 
 
