@@ -1,4 +1,8 @@
 <div class="container-fluid">
+
+
+  <pre>{{seleccionados | json}} </pre>
+    <pre>{{Filtrados | json}}</pre>
   <div class="row">
     <div class="col-sm-1"></div>
 
@@ -26,7 +30,10 @@
                   <select class="form-control" id="periodo"
                           required
                           [(ngModel)]="seleccionados.periodo" name="periodosEncontrados"
-                          #periodosEncontrados="ngModel">
+                          #periodosEncontrados="ngModel"
+                          (click)="obtenerIdPeriodo(seleccionados.periodo)"
+
+                  >
                     <option *ngFor="let periodo of periodos" [value]="periodo.periodo">{{periodo.periodo}}</option>
                   </select>
                   <div [hidden]="periodosEncontrados.valid || periodosEncontrados.pristine" class="alert alert-danger">
@@ -41,6 +48,7 @@
                   <select class="form-control" id="empresa"
                           required
                           [(ngModel)]="seleccionados.empresa" name="empresa2"
+                          (click)="verDepartamentos(seleccionados.empresa)"
                           #empresa2="ngModel">
                     <option *ngFor="let empresa of empresas" [value]="empresa.codigo">{{empresa.nombre}}</option>
                   </select>
@@ -50,20 +58,20 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="col-sm-4 control-label" for="departamento">Departamento</label>
-                <div class="col-sm-8">
-                  <select class="form-control" id="departamento"
-                          required
-                          [(ngModel)]="seleccionados.departamento" name="departamento2"
-                          #departamento2="ngModel">
-                    <option *ngFor="let departamento of departamentos" [value]="departamento.codigo">{{departamento.nombre}}</option>
-                  </select>
-                  <div [hidden]="departamento2.valid || departamento2.pristine" class="alert alert-danger">
-                    Debe seleccionar un departamento.
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="departamento3">Departamento</label>
+                  <div class="col-sm-8">
+                    <select class="form-control" id="departamento3"
+                            required
+                            [(ngModel)]="seleccionados.departamento" name="departamento2"
+                            #departamento2="ngModel">
+                      <option *ngFor="let depar of departamentosFiltrados" [value]="depar.codigo">{{depar.nombre}}</option>
+                    </select>
+                    <div [hidden]="departamento2.valid || departamento2.pristine" class="alert alert-danger">
+                      Debe seleccionar un departamento.
+                    </div>
                   </div>
                 </div>
-              </div>
 
               <div class="form-group">
                 <label class="col-sm-4 control-label" for="prenda">Prenda</label>
@@ -98,7 +106,9 @@
               <div class="form-group">
                 <div class="col-sm-offset-4 col-sm-8">
                   <button [disabled]="disabledButtons.NuevoCodigoFormSubmitButton||!NuevoCodigoForm.valid" type="submit"
-                          class="btn btn-block btn-success">Crear
+                          class="btn btn-block btn-success"
+                          data-toggle="modal" data-target="#myModal"
+                  >Crear
                   </button>
                 </div>
               </div>
@@ -116,9 +126,16 @@
     </div>
     <div class="col-sm-1"></div>
   </div>
+  <div class="row" [hidden]="ocultar" >
+    <div class="container modal fade" id="myModal"  >
+      <div class="dot dot-1"></div>
+      <div class="dot dot-2"></div>
+      <div class="dot dot-3"></div>
+    </div>
+  </div>
 </div>
 
-
+{{ocultar}}
 
 
 

@@ -24,7 +24,7 @@ export class CrearCodigoComponent implements OnInit {
     NuevoCodigoFormSubmitButton: false
   };
   seleccionados = {
-    periodo:'',
+    periodo:[],
     empresa:'',
     departamento:'',
     prenda:'',
@@ -37,15 +37,17 @@ export class CrearCodigoComponent implements OnInit {
     idPeriodo:0
   };
   nuevoCodigo={
-    codigo:''
+    codigo:'',
+    idEmpresaCodigo:''
   };
 
   periodos:any=[];
   empresas:any=[];
-  departamentos:any=[];
+  departamentos2:any=[];
   prendas:any=[];
   tejidos:any=[];
   cantidades:any=[];
+  departamentosFiltrados:any=[];
 
   cantidadEncontrada={
     id:0,
@@ -57,6 +59,16 @@ export class CrearCodigoComponent implements OnInit {
 
   cantidadVector:any=[];
   cantidadActualizada='';
+  ocultar =true
+
+  Filtrados={
+    periodo:[],
+    prenda:[],
+    empresa:[],
+    departamento:[],
+    tejido:[]
+
+  }
 
   constructor( private _PeriodoService:PeriodoService,
                private _EmpresaService:EmpresaService,
@@ -68,7 +80,9 @@ export class CrearCodigoComponent implements OnInit {
 
   ) { }
 
+
   ngOnInit() {
+    //<editor-fold desc="llamar a todos los periodos">
     // Llamar a todos los periodos
     this._PeriodoService.get()
       .subscribe(
@@ -81,6 +95,8 @@ export class CrearCodigoComponent implements OnInit {
         }
       );
 
+    //</editor-fold>
+    //<editor-fold desc="llamar a todas las emmpresas">
     // Llamar a todas las empresas
     this._EmpresaService.get()
       .subscribe(
@@ -92,20 +108,9 @@ export class CrearCodigoComponent implements OnInit {
           console.log(err);
         }
       );
+    //</editor-fold >
 
-    // Llamar a todos los departamentos
-    this._DepartamentoService.get()
-      .subscribe(
-        (res: Response) => {
-          this.departamentos = res.json();
-          console.log('departamentos',res.json());
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-
-    // Llamar a todas las prendas
+    //<editor-fold desc="llamar a todas prendas">
     this._PrendaService.get()
       .subscribe(
         (res: Response) => {
@@ -116,8 +121,8 @@ export class CrearCodigoComponent implements OnInit {
           console.log(err);
         }
       );
-
-    // Llamar a todos los tejidos
+    //</editor-fold >
+    //<editor-fold desc="llamar a todos los tejidos">
     this._TejidoService.get()
       .subscribe(
         (res: Response) => {
@@ -128,8 +133,9 @@ export class CrearCodigoComponent implements OnInit {
           console.log(err);
         }
       );
+    //</editor-fold >
+    //<editor-fold desc="llamar a todas las cantidades">
 
-    // Llamar a todas las cantidades
     this._CantidadService.get()
       .subscribe(
         (res: Response) => {
@@ -141,277 +147,329 @@ export class CrearCodigoComponent implements OnInit {
           console.log(err);
         }
       );
+    //</editor-fold >
 
 
   }
 
-  crearCodigo(formulario: NgForm){
-    // console.log('llego este formulario ',formulario);
-    // console.log('valor del periodo', formulario.value.periodosEncontrados)
-    // console.log('valor de la prenda', formulario.value.prenda2)
-   var codP= formulario.value.periodosEncontrados.substring(2,4);
-    //<editor-fold desc="Buscar el id del periodo">
-    //buscar id del periodo
-    this._PeriodoService.getPerido(formulario.value.periodosEncontrados)
-      .subscribe(
-        (res: Response) => {
-          console.log('periodo',res.json()[0].id)
-          this.idPeriodo=res.json()[0].id;
-          //<editor-fold desc="Buscar id de la prenda">
-          //buscar id Prenda
-          this._PrendaService.getPrenda(formulario.value.prenda2)
-            .subscribe(
-              (res: Response) => {
-                console.log('prenda:',res.json()[0].id);
-                this.idPrenda=res.json()[0].id;
+  // crearCodigo(formulario: NgForm){
+  //   console.log('entro en crear codigo');
+  // this.ocultar=false;
+  //
+  //  var codP= formulario.value.periodosEncontrados.substring(2,4);
+  //   //<editor-fold desc="Buscar el id del periodo">
+  //
+  //   this._PeriodoService.getPerido(formulario.value.periodosEncontrados)
+  //     .subscribe(
+  //       (res: Response) => {
+  //         console.log('periodo',res.json()[0].id)
+  //         this.idPeriodo=res.json()[0].id;
+  //         //<editor-fold desc="Buscar id de la prenda">
+  //
+  //         this._PrendaService.getPrenda(formulario.value.prenda2)
+  //           .subscribe(
+  //             (res: Response) => {
+  //               console.log('prenda:',res.json()[0].id);
+  //               this.idPrenda=res.json()[0].id;
+  //
+  //               //<editor-fold desc="Buscar  id del tejido">
+  //               this._TejidoService.getTejido(formulario.value.tejido2)
+  //                 .subscribe(
+  //                   (res: Response) => {
+  //                     console.log('tejido:',res.json()[0].id);
+  //                     this.idTejido=res.json()[0].id;
+  //
+  //                     //<editor-fold desc="Buscar Cantidad">
+  //                     //Buscar Cantidad
+  //                     this._CantidadService.getCantidad(this.idPrenda,this.idPeriodo, this.idTejido)
+  //                       .subscribe(
+  //                         (res: Response) => {
+  //                           console.log('cantidad:',res.json());
+  //                           this.cantidadVector=res.json();
+  //
+  //                           if(this.cantidadVector.length==0){
+  //                             //crear cantidad con id de la prenda y periodo
+  //                             this.nuevaCantidad.cantidad='0001';
+  //                             this.nuevaCantidad.idPrenda=this.idPrenda;
+  //                             this.nuevaCantidad.idPeriodo=this.idPeriodo;
+  //                             this.nuevaCantidad.idTejido=this.idTejido;
+  //                             console.log('con estos valores se va a crear la nueva cantidad',this.nuevaCantidad);
+  //                             this._CantidadService.create(this.nuevaCantidad)
+  //                               .subscribe(
+  //                                 (res: Response) => {
+  //                                   console.log('creado con ',res.json());
+  //                                 },
+  //                                 (err) => {
+  //                                   console.log(err);
+  //                                 }
+  //                               )
+  //                             var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+'0001';
+  //                             console.log('codigo parcial generado'+ codigoGenerado);
+  //                             this.nuevoCodigo.codigo=codigoGenerado;
+  //
+  //
+  //                            // <editor-fold desc="Crear codigo">
+  //                             this._CodigoService.create(this.nuevoCodigo)
+  //                               .subscribe(
+  //                                 (res: Response) => {
+  //                                   console.log('si creo')
+  //                                   console.log('antes',this.ocultar)
+  //                                   this.ocultar=true;
+  //                                   //
+  //                                   console.log('despues',this.ocultar)
+  //                                   this.seleccionados = {
+  //                                     periodo:'',
+  //                                     empresa:'',
+  //                                     departamento:'',
+  //                                     prenda:'',
+  //                                     tejido:''
+  //                                   };
+  //                                   console.log('codigo creado con ',res.json());
+  //
+  //
+  //
+  //
+  //                                 },
+  //                                 (err) => {
+  //                                   console.log(err);
+  //                                 }
+  //                               )
+  //                             // </editor-fold>
+  //
+  //                           }else{
+  //                             this.cantidadEncontrada.cantidad=this.cantidadVector[0].cantidad;
+  //                             this.cantidadEncontrada.id=this.cantidadVector[0].id;
+  //
+  //                             console.log('cantidad encontrada', this.cantidadEncontrada);
+  //                             var cant=(parseInt(this.cantidadEncontrada.cantidad)+1).toString();
+  //                             var actualizar={
+  //                               cantidad:''
+  //                             };
+  //
+  //                             switch(cant.length){
+  //                               case 1:
+  //                                 this.cantidadActualizada='000'+cant;
+  //                                 var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+this.cantidadActualizada;
+  //                                 console.log('codigo parcial generado'+ codigoGenerado);
+  //                                 this.nuevoCodigo.codigo=codigoGenerado;
+  //                                 this._CodigoService.create(this.nuevoCodigo)
+  //                                   .subscribe(
+  //                                     (res: Response) => {
+  //
+  //                                       //
+  //                                       console.log('codigo creado con ',res.json());
+  //                                       //actualizar cantidad
+  //                                       console.log('empezo a actualizar')
+  //
+  //                                       actualizar.cantidad=this.cantidadActualizada
+  //
+  //                                       this._CantidadService.update(actualizar,this.cantidadEncontrada.id)
+  //                                         .subscribe(
+  //                                           (res: Response) => {
+  //
+  //                                             //
+  //                                             console.log('actualizado con ',res.json());
+  //
+  //                                           },
+  //                                           (err) => {
+  //                                             console.log(err);
+  //                                           }
+  //                                         )
+  //                                     },
+  //                                     (err) => {
+  //                                       console.log(err);
+  //                                     }
+  //                                   )
+  //                                 break;
+  //                               case 2:
+  //                                 this.cantidadActualizada='00'+cant;
+  //                                 var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+this.cantidadActualizada;
+  //                                 console.log('codigo parcial generado'+ codigoGenerado);
+  //                                 this.nuevoCodigo.codigo=codigoGenerado;
+  //                                 this._CodigoService.create(this.nuevoCodigo)
+  //                                   .subscribe(
+  //                                     (res: Response) => {
+  //
+  //                                       //
+  //                                       console.log('codigo creado con ',res.json());
+  //                                       //actualizar cantidad
+  //                                       console.log('empezo a actualizar')
+  //
+  //                                       actualizar.cantidad=this.cantidadActualizada
+  //
+  //                                       this._CantidadService.update(actualizar,this.cantidadEncontrada.id)
+  //                                         .subscribe(
+  //                                           (res: Response) => {
+  //
+  //                                             //
+  //                                             console.log('actualizado con ',res.json());
+  //
+  //                                           },
+  //                                           (err) => {
+  //                                             console.log(err);
+  //                                           }
+  //                                         )
+  //
+  //                                       // ;
+  //
+  //
+  //
+  //
+  //
+  //                                     },
+  //                                     (err) => {
+  //                                       console.log(err);
+  //                                     }
+  //                                   )
+  //                                 break;
+  //                               case 3:
+  //                                 this.cantidadActualizada='0'+cant;
+  //                                 var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+this.cantidadActualizada;
+  //                                 console.log('codigo parcial generado'+ codigoGenerado);
+  //                                 this.nuevoCodigo.codigo=codigoGenerado;
+  //                                 this._CodigoService.create(this.nuevoCodigo)
+  //                                   .subscribe(
+  //                                     (res: Response) => {
+  //
+  //                                       //
+  //                                       console.log('codigo creado con ',res.json());
+  //                                       //actualizar cantidad
+  //                                       console.log('empezo a actualizar')
+  //
+  //                                       actualizar.cantidad=this.cantidadActualizada
+  //
+  //                                       this._CantidadService.update(actualizar,this.cantidadEncontrada.id)
+  //                                         .subscribe(
+  //                                           (res: Response) => {
+  //
+  //                                             //
+  //                                             console.log('actualizado con ',res.json());
+  //
+  //                                           },
+  //                                           (err) => {
+  //                                             console.log(err);
+  //                                           }
+  //                                         )
+  //
+  //                                       // ;
+  //
+  //
+  //
+  //
+  //
+  //                                     },
+  //                                     (err) => {
+  //                                       console.log(err);
+  //                                     }
+  //                                   )
+  //                                 break;
+  //                               case 4:
+  //                                 this.cantidadActualizada=cant;
+  //                                 var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+this.cantidadActualizada;
+  //                                 console.log('codigo parcial generado'+ codigoGenerado);
+  //                                 this.nuevoCodigo.codigo=codigoGenerado;
+  //                                 this._CodigoService.create(this.nuevoCodigo)
+  //                                   .subscribe(
+  //                                     (res: Response) => {
+  //
+  //                                       //
+  //                                       console.log('codigo creado con ',res.json());
+  //                                       //actualizar cantidad
+  //                                       console.log('empezo a actualizar')
+  //
+  //                                       actualizar.cantidad=this.cantidadActualizada
+  //
+  //                                       this._CantidadService.update(actualizar,this.cantidadEncontrada.id)
+  //                                         .subscribe(
+  //                                           (res: Response) => {
+  //
+  //                                             //
+  //                                             console.log('actualizado con ',res.json());
+  //
+  //                                           },
+  //                                           (err) => {
+  //                                             console.log(err);
+  //                                           }
+  //                                         )
+  //
+  //                                       // ;
+  //
+  //
+  //
+  //
+  //
+  //                                     },
+  //                                     (err) => {
+  //                                       console.log(err);
+  //                                     }
+  //                                   )
+  //                                 break;
+  //
+  //                             }
+  //                           }
+  //                         },
+  //                         (err) => {
+  //                           console.log(err);
+  //                         }
+  //                       );
+  //                     //</editor-fold >
+  //
+  //
+  //                   },
+  //                   (err) => {
+  //                     console.log(err);
+  //                   }
+  //                 );
+  //               //</editor-fold >
+  //
+  //             },
+  //             (err) => {
+  //               console.log(err);
+  //             }
+  //           );
+  //         //</editor-fold >
+  //       },
+  //       (err) => {
+  //         console.log(err);
+  //       }
+  //     );
+  //   //</editor-fold >
+  // }
 
-                //<editor-fold desc="Buscar  id del tejido">
-                this._TejidoService.getTejido(formulario.value.tejido2)
-                  .subscribe(
-                    (res: Response) => {
-                      console.log('tejido:',res.json()[0].id);
-                      this.idTejido=res.json()[0].id;
+  verDepartamentos(valor){
+    console.log(typeof valor);
+    if(valor==''){
+      console.log('vacio',valor)
+    }else{
+      console.log(valor)
+      // console.log('selecciono',valor)
+      this.departamentos2=this.empresas.filter(function (value) {
+        return value.codigo==valor
 
-                      //<editor-fold desc="Buscar Cantidad">
-                      //Buscar Cantidad
-                      this._CantidadService.getCantidad(this.idPrenda,this.idPeriodo, this.idTejido)
-                        .subscribe(
-                          (res: Response) => {
-                            console.log('cantidad:',res.json());
-                            this.cantidadVector=res.json();
+      })
+      console.log( typeof  this.departamentos2)
+      this.departamentosFiltrados=this.departamentos2[0].departamentos
+      console.log( 'depar2'  ,this.departamentosFiltrados)
+    }
 
-                            if(this.cantidadVector.length==0){
-                              //crear cantidad con id de la prenda y periodo
-                              this.nuevaCantidad.cantidad='0001';
-                              this.nuevaCantidad.idPrenda=this.idPrenda;
-                              this.nuevaCantidad.idPeriodo=this.idPeriodo;
-                              this.nuevaCantidad.idTejido=this.idTejido;
-                              console.log('con estos valores se va a crear la nueva cantidad',this.nuevaCantidad);
-                              this._CantidadService.create(this.nuevaCantidad)
-                                .subscribe(
-                                  (res: Response) => {
-                                    console.log('creado con ',res.json());
-                                  },
-                                  (err) => {
-                                    console.log(err);
-                                  }
-                                )
-                              var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+'0001';
-                              console.log('codigo parcial generado'+ codigoGenerado);
-                              this.nuevoCodigo.codigo=codigoGenerado;
-                              this._CodigoService.create(this.nuevoCodigo)
-                                .subscribe(
-                                  (res: Response) => {
-
-                                    //
-                                    console.log('codigo creado con ',res.json());
+  }
+  createCodigo(formulario:NgForm){
 
 
+  }
+
+  obtenerIdPeriodo(valorP){
+    if(valorP!=''){
+      this.Filtrados.periodo=this.periodos.filter(function (value,) {
+
+        return value.periodo==valorP;
+
+      })
+
+      var idP= this.Filtrados.periodo[0].id;
+      console.log(idP)
+    }
 
 
-                                  },
-                                  (err) => {
-                                    console.log(err);
-                                  }
-                                )
-
-                            }else{
-                              this.cantidadEncontrada.cantidad=this.cantidadVector[0].cantidad;
-                              this.cantidadEncontrada.id=this.cantidadVector[0].id;
-
-                              console.log('cantidad encontrada', this.cantidadEncontrada);
-                              var cant=(parseInt(this.cantidadEncontrada.cantidad)+1).toString();
-                              var actualizar={
-                                cantidad:''
-                              };
-
-                              switch(cant.length){
-                                case 1:
-                                  this.cantidadActualizada='000'+cant;
-                                  var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+this.cantidadActualizada;
-                                  console.log('codigo parcial generado'+ codigoGenerado);
-                                  this.nuevoCodigo.codigo=codigoGenerado;
-                                  this._CodigoService.create(this.nuevoCodigo)
-                                    .subscribe(
-                                      (res: Response) => {
-
-                                        //
-                                        console.log('codigo creado con ',res.json());
-                                        //actualizar cantidad
-                                        console.log('empezo a actualizar')
-
-                                        actualizar.cantidad=this.cantidadActualizada
-
-                                        this._CantidadService.update(actualizar,this.cantidadEncontrada.id)
-                                          .subscribe(
-                                            (res: Response) => {
-
-                                              //
-                                              console.log('actualizado con ',res.json());
-
-                                            },
-                                            (err) => {
-                                              console.log(err);
-                                            }
-                                          )
-                                      },
-                                      (err) => {
-                                        console.log(err);
-                                      }
-                                    )
-                                  break;
-                                case 2:
-                                  this.cantidadActualizada='00'+cant;
-                                  var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+this.cantidadActualizada;
-                                  console.log('codigo parcial generado'+ codigoGenerado);
-                                  this.nuevoCodigo.codigo=codigoGenerado;
-                                  this._CodigoService.create(this.nuevoCodigo)
-                                    .subscribe(
-                                      (res: Response) => {
-
-                                        //
-                                        console.log('codigo creado con ',res.json());
-                                        //actualizar cantidad
-                                        console.log('empezo a actualizar')
-
-                                        actualizar.cantidad=this.cantidadActualizada
-
-                                        this._CantidadService.update(actualizar,this.cantidadEncontrada.id)
-                                          .subscribe(
-                                            (res: Response) => {
-
-                                              //
-                                              console.log('actualizado con ',res.json());
-
-                                            },
-                                            (err) => {
-                                              console.log(err);
-                                            }
-                                          )
-
-                                        // ;
-
-
-
-
-
-                                      },
-                                      (err) => {
-                                        console.log(err);
-                                      }
-                                    )
-                                  break;
-                                case 3:
-                                  this.cantidadActualizada='0'+cant;
-                                  var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+this.cantidadActualizada;
-                                  console.log('codigo parcial generado'+ codigoGenerado);
-                                  this.nuevoCodigo.codigo=codigoGenerado;
-                                  this._CodigoService.create(this.nuevoCodigo)
-                                    .subscribe(
-                                      (res: Response) => {
-
-                                        //
-                                        console.log('codigo creado con ',res.json());
-                                        //actualizar cantidad
-                                        console.log('empezo a actualizar')
-
-                                        actualizar.cantidad=this.cantidadActualizada
-
-                                        this._CantidadService.update(actualizar,this.cantidadEncontrada.id)
-                                          .subscribe(
-                                            (res: Response) => {
-
-                                              //
-                                              console.log('actualizado con ',res.json());
-
-                                            },
-                                            (err) => {
-                                              console.log(err);
-                                            }
-                                          )
-
-                                        // ;
-
-
-
-
-
-                                      },
-                                      (err) => {
-                                        console.log(err);
-                                      }
-                                    )
-                                  break;
-                                case 4:
-                                  this.cantidadActualizada=cant;
-                                  var codigoGenerado=codP+formulario.value.prenda2+formulario.value.tejido2+this.cantidadActualizada;
-                                  console.log('codigo parcial generado'+ codigoGenerado);
-                                  this.nuevoCodigo.codigo=codigoGenerado;
-                                  this._CodigoService.create(this.nuevoCodigo)
-                                    .subscribe(
-                                      (res: Response) => {
-
-                                        //
-                                        console.log('codigo creado con ',res.json());
-                                        //actualizar cantidad
-                                        console.log('empezo a actualizar')
-
-                                        actualizar.cantidad=this.cantidadActualizada
-
-                                        this._CantidadService.update(actualizar,this.cantidadEncontrada.id)
-                                          .subscribe(
-                                            (res: Response) => {
-
-                                              //
-                                              console.log('actualizado con ',res.json());
-
-                                            },
-                                            (err) => {
-                                              console.log(err);
-                                            }
-                                          )
-
-                                        // ;
-
-
-
-
-
-                                      },
-                                      (err) => {
-                                        console.log(err);
-                                      }
-                                    )
-                                  break;
-
-                              }
-                            }
-                          },
-                          (err) => {
-                            console.log(err);
-                          }
-                        );
-                      //</editor-fold >
-
-
-                    },
-                    (err) => {
-                      console.log(err);
-                    }
-                  );
-                //</editor-fold >
-
-              },
-              (err) => {
-                console.log(err);
-              }
-            );
-          //</editor-fold >
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-    //</editor-fold >
   }
 }
