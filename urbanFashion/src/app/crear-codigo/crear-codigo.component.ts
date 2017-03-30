@@ -220,6 +220,7 @@ export class CrearCodigoComponent implements OnInit {
                     tejido:''
                   };
                   console.log('codigo creado cuando no existe',res.json());
+                  formulario.reset();
                   },
                 (err) => {
                   console.log(err);
@@ -276,6 +277,7 @@ export class CrearCodigoComponent implements OnInit {
                           prenda:'',
                           tejido:''
                         };
+                        formulario.reset();
 
                       },
                       (err) => {
