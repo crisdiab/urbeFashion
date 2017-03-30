@@ -59,7 +59,7 @@ export class CrearCodigoComponent implements OnInit {
 
   cantidadVector:any=[];
   cantidadActualizada='';
-  ocultar = true;
+  modalOculto:Boolean ;
 
   Filtrados={
     periodo:[],
@@ -210,7 +210,8 @@ export class CrearCodigoComponent implements OnInit {
               .subscribe(
                 (res: Response) => {
 
-                    console.log('primero')
+
+                  this.modalOculto=!this.modalOculto;
                   this.seleccionados = {
                     periodo:'',
                     empresa:'',
@@ -267,8 +268,18 @@ export class CrearCodigoComponent implements OnInit {
                     .subscribe(
                       (res: Response) => {
                         console.log('actualizado con ',res.json());
+                        this.modalOculto=!this.modalOculto;
+                        this.seleccionados = {
+                          periodo:'',
+                          empresa:'',
+                          departamento:'',
+                          prenda:'',
+                          tejido:''
+                        };
+
                       },
                       (err) => {
+
                         console.log(err);
                       }
                     )
