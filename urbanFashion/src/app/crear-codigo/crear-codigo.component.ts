@@ -21,6 +21,7 @@ export class CrearCodigoComponent implements OnInit {
   disabledButtons = {
     NuevoCodigoFormSubmitButton: false
   };
+
   seleccionados = {
     periodo:'',
     empresa:'',
@@ -28,6 +29,7 @@ export class CrearCodigoComponent implements OnInit {
     prenda:'',
     tejido:''
   };
+
   nuevaCantidad={
     cantidad:'',
     idPrenda:0,
@@ -36,16 +38,19 @@ export class CrearCodigoComponent implements OnInit {
   };
   nuevoCodigo={
     codigo:'',
-    idEmpresaCodigo:0
+    idEmpresaCodigo:0,
+    nombreEmpresa:'',
+    nombreDepartamento:''
   };
 
   periodos:any=[];
   empresas:any=[];
-  departamentos2:any=[];
+  departamentos:any=[];
+  departamentosFiltrados:any=[];
   prendas:any=[];
   tejidos:any=[];
   cantidades:any=[];
-  departamentosFiltrados:any=[];
+
 
   cantidadEncontrada={
     id:0,
@@ -53,9 +58,13 @@ export class CrearCodigoComponent implements OnInit {
   };
 
   idEmpresa:number=0;
+  idDepartamento:number=0;
   idPeriodo:number=0;
   idPrenda:number=0;
   idTejido:number=0;
+
+  nombreEmpresa:'';
+  nombreDepartamento:'';
 
   cantidadVector:any=[];
   cantidadActualizada='';
@@ -63,11 +72,11 @@ export class CrearCodigoComponent implements OnInit {
 
   Filtrados={
     periodo:[],
-    prenda:[],
     empresa:[],
     departamento:[],
+    prenda:[],
     tejido:[]
-  }
+  };
 
   constructor( private _PeriodoService:PeriodoService,
                private _EmpresaService:EmpresaService,
@@ -135,7 +144,7 @@ export class CrearCodigoComponent implements OnInit {
       );
     //</editor-fold >
 
-    //<editor-fold desc="llamar a todas las cantidades">
+    //<editor-fold desc="Llamar a todas las cantidades">
 
     this._CantidadService.get()
       .subscribe(
@@ -150,31 +159,26 @@ export class CrearCodigoComponent implements OnInit {
     //</editor-fold >
   }
 
-  verDepartamentos(valor){
-    console.log(typeof valor);
-    if(valor==''){
-      console.log('vacio',valor)
-    }else{
-      console.log(valor)
-      // console.log('selecciono',valor)
-      this.departamentos2=this.empresas.filter(function (value) {
-        return value.codigo==valor
-
+  obtenerDepartamento(valor){
+    //console.log(typeof valor);
+    if(valor!=''){
+      console.log(valor);
+      this.departamentos = this.empresas.filter(function (value) {
+        return value.codigo==valor;
       })
-      console.log( typeof  this.departamentos2)
-      this.departamentosFiltrados=this.departamentos2[0].departamentos
-      console.log( 'depar2'  ,this.departamentosFiltrados)
+      console.log('departamentos',this.departamentos);
+      this.departamentosFiltrados=this.departamentos[0].departamentos;
+      console.log( 'departamentos filtrados'  ,this.departamentosFiltrados)
     }
-
   }
 
-
+  //<editor-fold desc="Crear Código">
   crearCodigo(formulario:NgForm){
     var codigoPeriodo= this.seleccionados.periodo.substring(2,4);
     console.log(codigoPeriodo+this.seleccionados.prenda+this.seleccionados.tejido);
     console.log(this.idPeriodo+' '+this.idPrenda+' '+this.idTejido);
 
-    //<editor-fold desc="Buscar Cantidad">
+
     //Buscar Cantidad
     this._CantidadService.getCantidad(this.idPrenda,this.idPeriodo, this.idTejido)
       .subscribe(
@@ -205,12 +209,12 @@ export class CrearCodigoComponent implements OnInit {
             console.log('codigo parcial generado'+ codigoGenerado);
             this.nuevoCodigo.codigo = codigoGenerado;
             this.nuevoCodigo.idEmpresaCodigo = this.idEmpresa;
-            // <editor-fold desc="Crear codigo">
+            this.nuevoCodigo.nombreEmpresa = this.nombreEmpresa;
+            this.nuevoCodigo.nombreDepartamento = this.nombreDepartamento;
+
             this._CodigoService.create(this.nuevoCodigo)
               .subscribe(
                 (res: Response) => {
-
-
                   this.modalOculto=!this.modalOculto;
                   this.seleccionados = {
                     periodo:'',
@@ -257,6 +261,8 @@ export class CrearCodigoComponent implements OnInit {
             var codigoGenerado = codigoPeriodo+this.seleccionados.prenda+this.seleccionados.tejido+this.cantidadActualizada;
             this.nuevoCodigo.codigo = codigoGenerado;
             this.nuevoCodigo.idEmpresaCodigo = this.idEmpresa;
+            this.nuevoCodigo.nombreEmpresa = this.nombreEmpresa;
+            this.nuevoCodigo.nombreDepartamento = this.nombreDepartamento;
 
             this._CodigoService.create(this.nuevoCodigo)
               .subscribe(
@@ -295,8 +301,9 @@ export class CrearCodigoComponent implements OnInit {
         (err) => {
           console.log(err);
         });
-    //</editor-fold >
+
   }
+  //</editor-fold >
 
   //<editor-fold desc="Obtener el ID del Perido">
   obtenerIdPeriodo(valorP){
@@ -317,7 +324,23 @@ export class CrearCodigoComponent implements OnInit {
         return value.codigo == valorEmpresa;
       })
       this.idEmpresa = this.Filtrados.empresa[0].id;
+      this.nombreEmpresa = this.Filtrados.empresa[0].nombre;
       console.log('id de la empresa',this.idEmpresa);
+      console.log('nombre de la empresa',this.nombreEmpresa);
+    }
+  }
+  //</editor-fold>
+
+  //<editor-fold desc="Obtener el ID del Departamento">
+  obtenerIdDepartamento(valorDepartamento){
+    if(valorDepartamento!=''){
+      this.Filtrados.departamento = this.departamentosFiltrados.filter(function (value){
+        return value.codigo == valorDepartamento;
+      });
+      this.idDepartamento = this.Filtrados.departamento[0].id;
+      this.nombreDepartamento = this.Filtrados.departamento[0].nombre;
+      console.log('id del departamento',this.idDepartamento);
+      console.log('nombre del departamento',this.nombreDepartamento);
     }
   }
   //</editor-fold>

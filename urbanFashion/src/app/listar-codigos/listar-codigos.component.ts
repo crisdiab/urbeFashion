@@ -13,10 +13,16 @@ export class ListarCodigosComponent implements OnInit {
   codigos:any=[];
   deshabilitar={
     botonEditar:true,
-  }
+  };
   pruebas:any=[{codigo:'324',estado:'pendiente'},{codigo:'324',estado:'pendiente'}];
 
-  userFilter: any = { codigo:'', estado:'', createdAt:''};
+  userFilter: any = {
+    codigo:'',
+    estado:'',
+    nombreEmpresa:'',
+    nombreDepartamento:'',
+    createdAt:''
+  };
 
   constructor(private _CodigoService:CodigoService,
   ) { }
@@ -29,6 +35,9 @@ export class ListarCodigosComponent implements OnInit {
           this.codigos = res.json()
             .map((value) => {
               value.formularioCerrado = true;
+              value.nombreEmpresa;
+              value.nombreDepartamento;
+              value.descripcion = 'no tiene';
               return value;
             });
 

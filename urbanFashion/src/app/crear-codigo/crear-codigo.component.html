@@ -47,7 +47,7 @@
                   <select class="form-control" id="empresa"
                           required
                           [(ngModel)]="seleccionados.empresa" name="empresa2"
-                          (click)="verDepartamentos(seleccionados.empresa);obtenerIdEmpresa(seleccionados.empresa)"
+                          (click)="obtenerDepartamento(seleccionados.empresa); obtenerIdEmpresa(seleccionados.empresa)"
                           #empresa2="ngModel"
                           >
                     <option *ngFor="let empresa of empresas" [value]="empresa.codigo">{{empresa.nombre}}</option>
@@ -64,8 +64,8 @@
                     <select class="form-control" id="departamento3"
                             required
                             [(ngModel)]="seleccionados.departamento" name="departamento2"
+                            (click)="obtenerIdDepartamento(seleccionados.departamento)"
                             #departamento2="ngModel"
-                            (click)="obtenerDepartamento(seleccionados.departamento)"
 
                     >
 
@@ -83,8 +83,10 @@
                   <select class="form-control" id="prenda"
                           required
                           [(ngModel)]="seleccionados.prenda" name="prenda2"
+                          (click)="obtenerIdPrenda(seleccionados.prenda)"
                           #prenda2="ngModel"
-                          (click)="obtenerIdPrenda(seleccionados.prenda)">
+
+                  >
                     <option *ngFor="let prenda of prendas" [value]="prenda.codigo">{{prenda.nombre}}</option>
                   </select>
                   <!--<div [hidden]="prenda2.valid || prenda2.pristine" class="alert alert-danger">-->

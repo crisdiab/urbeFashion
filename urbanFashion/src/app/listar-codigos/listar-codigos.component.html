@@ -11,27 +11,43 @@
         <tr>
           <th>
             <div class="row">
-              <div class="col-sm-3">Código</div>
-              <div class="col-sm-3">
+              <div class="col-sm-12">Código
                 <input class="colorLetra" type="text" [(ngModel)]="userFilter.codigo" placeholder="buscar">
               </div>
             </div>
           </th>
+
           <th>
             <div class="row">
               <div class="col-sm-3">
-                <div class="divider"></div>Estado</div>
-              <div class="col-sm-3">
+                <div class="divider"></div>Empresa
+                <input class="colorLetra" type="text" [(ngModel)]="userFilter.nombreEmpresa" placeholder="buscar">
+              </div>
+            </div>
+          </th>
+
+          <th>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="divider"></div>Departamento
+                <input class="colorLetra" type="text" [(ngModel)]="userFilter.nombreDepartamento" placeholder="buscar">
+              </div>
+            </div>
+          </th>
+
+          <th>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="divider"></div>Estado
                 <input class="colorLetra" type="text" [(ngModel)]="userFilter.estado" placeholder="buscar">
               </div>
             </div>
+          </th>
 
-            </th>
           <th>
             <div class="row">
-              <div class="col-sm-3">
-                <div class="divider"></div>Fecha</div>
-              <div class="col-sm-3">
+              <div class="col-sm-12">
+                <div class="divider"></div>Fecha
                 <input class="colorLetra" type="text" [(ngModel)]="userFilter.createdAt" placeholder="buscar">
               </div>
             </div>
@@ -43,6 +59,8 @@
         <tbody *ngFor="let codigo of codigos | filterBy: userFilter">
         <tr>
           <td>{{codigo.codigo}}</td>
+          <td>{{codigo.nombreEmpresa}}</td>
+          <td>{{codigo.nombreDepartamento}}</td>
           <td>
             <div [hidden]="!codigo.formularioCerrado">
               {{codigo.estado}}
@@ -76,6 +94,7 @@
               </div>
             </div>
           </td>
+
           <td>{{codigo.createdAt | date:'dd/MM/yyyy'}}</td>
           <td>
             <div class="row animated flipInY">
