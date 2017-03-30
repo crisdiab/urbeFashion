@@ -17,6 +17,7 @@ import {CodigoService} from "./Services/codigo.service";
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import {EmpresaService} from "./Services/empresa.service";
 import {DepartamentoService} from "./Services/departamento.service";
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import {DepartamentoService} from "./Services/departamento.service";
     CrearCodigoComponent,
     InicioComponent,
     ListarCodigosComponent,
+    LoadingComponent,
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
