@@ -1,9 +1,10 @@
 <div class="container-fluid">
 
+  <pre>{{seleccionados | json}}</pre>
 
-  <pre>{{seleccionados | json}} </pre>
-    <pre>{{Filtrados | json}}</pre>
+
   <div class="row">
+
     <div class="col-sm-1"></div>
 
     <div class="col-sm-10">
@@ -21,9 +22,8 @@
         <div class="col-md-6">
           <form class="animated bounceIn" (ngSubmit)="crearCodigo(NuevoCodigoForm)" #NuevoCodigoForm="ngForm">
 
-
-
             <div class="form-horizontal">
+
               <div class="form-group">
                 <label class="col-sm-4 control-label" for="periodo">Periodo</label>
                 <div class="col-sm-8">
@@ -32,7 +32,6 @@
                           [(ngModel)]="seleccionados.periodo" name="periodosEncontrados"
                           #periodosEncontrados="ngModel"
                           (click)="obtenerIdPeriodo(seleccionados.periodo)"
-
                   >
                     <option *ngFor="let periodo of periodos" [value]="periodo.periodo">{{periodo.periodo}}</option>
                   </select>
@@ -49,7 +48,8 @@
                           required
                           [(ngModel)]="seleccionados.empresa" name="empresa2"
                           (click)="verDepartamentos(seleccionados.empresa)"
-                          #empresa2="ngModel">
+                          #empresa2="ngModel"
+                          (click)="obtenerIdEmpresa(seleccionados.empresa)">
                     <option *ngFor="let empresa of empresas" [value]="empresa.codigo">{{empresa.nombre}}</option>
                   </select>
                   <div [hidden]="empresa2.valid || empresa2.pristine" class="alert alert-danger">
@@ -79,7 +79,8 @@
                   <select class="form-control" id="prenda"
                           required
                           [(ngModel)]="seleccionados.prenda" name="prenda2"
-                          #prenda2="ngModel">
+                          #prenda2="ngModel"
+                          (click)="obtenerIdPrenda(seleccionados.prenda)">
                     <option *ngFor="let prenda of prendas" [value]="prenda.codigo">{{prenda.nombre}}</option>
                   </select>
                   <div [hidden]="prenda2.valid || prenda2.pristine" class="alert alert-danger">
@@ -94,7 +95,8 @@
                   <select class="form-control" id="tejido"
                           required
                           [(ngModel)]="seleccionados.tejido" name="tejido2"
-                          #tejido2="ngModel">
+                          #tejido2="ngModel"
+                          (click)="obtenerIdTejido(seleccionados.tejido)">
                     <option *ngFor="let tejido of tejidos" [value]="tejido.codigo">{{tejido.nombre}}</option>
                   </select>
                   <div [hidden]="tejido2.valid || tejido2.pristine" class="alert alert-danger">
@@ -114,8 +116,6 @@
               </div>
 
             </div>
-
-
           </form>
 
           <h3>Para ver todos los codigos registrados <span> <button [routerLink]="['/listarc']" class="btn btn-link">Click Aqui</button></span> </h3>
