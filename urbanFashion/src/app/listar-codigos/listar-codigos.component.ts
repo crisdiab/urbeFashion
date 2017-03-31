@@ -35,8 +35,6 @@ export class ListarCodigosComponent implements OnInit {
           this.codigos = res.json()
             .map((value) => {
               value.formularioCerrado = true;
-              value.nombreEmpresa;
-              value.nombreDepartamento;
               value.descripcion = 'no tiene';
               return value;
             });
