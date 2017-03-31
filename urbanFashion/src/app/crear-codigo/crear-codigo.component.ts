@@ -103,9 +103,7 @@ export class CrearCodigoComponent implements OnInit {
         }
       );
     //</editor-fold>
-
-    //<editor-fold desc="Llamar a todas las emmpresas">
-    // Llamar a todas las empresas
+    //<editor-fold desc="Llamar a todas las empresas">
     this._EmpresaService.get()
       .subscribe(
         (res: Response) => {
@@ -117,7 +115,6 @@ export class CrearCodigoComponent implements OnInit {
         }
       );
     //</editor-fold >
-
     //<editor-fold desc="Llamar a todas prendas">
     this._PrendaService.get()
       .subscribe(
@@ -130,7 +127,6 @@ export class CrearCodigoComponent implements OnInit {
         }
       );
     //</editor-fold >
-
     //<editor-fold desc="Llamar a todos los tejidos">
     this._TejidoService.get()
       .subscribe(
@@ -143,7 +139,6 @@ export class CrearCodigoComponent implements OnInit {
         }
       );
     //</editor-fold >
-
     //<editor-fold desc="Llamar a todas las cantidades">
 
     this._CantidadService.get()
@@ -160,7 +155,9 @@ export class CrearCodigoComponent implements OnInit {
   }
 
   obtenerDepartamento(valor){
-    //console.log(typeof valor);
+   this.seleccionados.departamento=''
+    this.departamentosFiltrados=[];
+
     if(valor!=''){
       console.log(valor);
       this.departamentos = this.empresas.filter(function (value) {
@@ -174,7 +171,7 @@ export class CrearCodigoComponent implements OnInit {
 
   //<editor-fold desc="Crear Código">
   crearCodigo(formulario:NgForm){
-    var codigoPeriodo= this.seleccionados.periodo.substring(2,4);
+    let codigoPeriodo= this.seleccionados.periodo.substring(2,4);
     console.log(codigoPeriodo+this.seleccionados.prenda+this.seleccionados.tejido);
     console.log(this.idPeriodo+' '+this.idPrenda+' '+this.idTejido);
 
@@ -188,30 +185,34 @@ export class CrearCodigoComponent implements OnInit {
 
           if(this.cantidadVector.length == 0){
 
+            //<editor-fold desc="Crear objeto nueva cantidad">
             //crear cantidad con id de la prenda y periodo
             this.nuevaCantidad.cantidad='0001';
             this.nuevaCantidad.idPrenda=this.idPrenda;
             this.nuevaCantidad.idPeriodo=this.idPeriodo;
             this.nuevaCantidad.idTejido=this.idTejido;
-
-            console.log('con estos valores se va a crear la nueva cantidad',this.nuevaCantidad);
+            //</editor-fold>
+            //<editor-fold desc="Crear la cantidad">
             this._CantidadService.create(this.nuevaCantidad)
               .subscribe(
                 (res: Response) => {
-                  console.log(' cuando pasa esto creado con ',res.json());
+                  console.log(' Se creo con ',res.json());
                   },
                 (err) => {
-                  console.log(err);
+                  console.log('No se pudo crear la cantidad',err);
                 }
               );
+            //</editor-fold>
 
             var codigoGenerado = codigoPeriodo+this.seleccionados.prenda+this.seleccionados.tejido+'0001';
             console.log('codigo parcial generado'+ codigoGenerado);
+            //<editor-fold desc="crear objeto nuevo codigo">
             this.nuevoCodigo.codigo = codigoGenerado;
             this.nuevoCodigo.idEmpresaCodigo = this.idEmpresa;
             this.nuevoCodigo.nombreEmpresa = this.nombreEmpresa;
             this.nuevoCodigo.nombreDepartamento = this.nombreDepartamento;
 
+            //</editor-fold>
             this._CodigoService.create(this.nuevoCodigo)
               .subscribe(
                 (res: Response) => {
@@ -223,11 +224,11 @@ export class CrearCodigoComponent implements OnInit {
                     prenda:'',
                     tejido:''
                   };
-                  console.log('codigo creado cuando no existe',res.json());
-                  formulario.reset();
+                  console.log('codigo creado cuando no existe la cantidad',res.json());
+                  //formulario.reset();
                   },
                 (err) => {
-                  console.log(err);
+                  console.log('No se creo el codigo',err);
                 }
                 )
           }else{
@@ -239,7 +240,7 @@ export class CrearCodigoComponent implements OnInit {
             var actualizar={
               cantidad:''
             };
-
+          //<editor-fold desc="switch para actualizar cantidad">
             switch(cant.length){
               case 1:
                 this.cantidadActualizada='000'+cant;
@@ -258,6 +259,7 @@ export class CrearCodigoComponent implements OnInit {
                 break;
             }
 
+            //</editor-fold>
             var codigoGenerado = codigoPeriodo+this.seleccionados.prenda+this.seleccionados.tejido+this.cantidadActualizada;
             this.nuevoCodigo.codigo = codigoGenerado;
             this.nuevoCodigo.idEmpresaCodigo = this.idEmpresa;
@@ -283,17 +285,17 @@ export class CrearCodigoComponent implements OnInit {
                           prenda:'',
                           tejido:''
                         };
-                        formulario.reset();
+
 
                       },
                       (err) => {
 
-                        console.log(err);
+                        console.log('No se pudo actualizar la cantidad',err);
                       }
                     )
                 },
                 (err) => {
-                  console.log(err);
+                  console.log('No se pudo crear el codigo',err);
                 }
               )
           }
