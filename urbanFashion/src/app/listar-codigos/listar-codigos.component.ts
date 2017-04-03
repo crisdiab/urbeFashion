@@ -23,6 +23,7 @@ export class ListarCodigosComponent implements OnInit {
     nombreDepartamento:'',
     createdAt:''
   };
+  ocultoModal:Boolean=true;
 
   constructor(private _CodigoService:CodigoService,
   ) { }
