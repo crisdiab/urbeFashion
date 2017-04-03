@@ -16,26 +16,23 @@ export class ListarCodigosComponent implements OnInit {
   };
   pruebas:any=[{codigo:'324',estado:'pendiente'},{codigo:'324',estado:'pendiente'}];
 
-  userFilter: any = {
-    codigo:'',
-    estado:'',
-    nombreEmpresa:'',
-    nombreDepartamento:'',
-    createdAt:''
-  };
+
   ocultoModal:Boolean=true;
+  vertitulo:String='Modal para algo'
+  verLabel=false
 
   constructor(private _CodigoService:CodigoService,
   ) { }
 
   ngOnInit() {
     // Llamar a todos los Codigos
+    console.log('empieza  ng oninit');
     this._CodigoService.get()
       .subscribe(
         (res: Response) => {
           this.codigos = res.json()
             .map((value) => {
-              value.formularioCerrado = true;
+
               value.descripcion = 'no tiene';
               return value;
             });

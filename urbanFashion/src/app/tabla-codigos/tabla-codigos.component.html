@@ -1,0 +1,71 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-md-1">
+</div>
+<div class="col-md-10">
+
+<h2>{{tituloLista}}</h2>
+
+<table class="table table-bordered " >
+<thead>
+<tr>
+<th>
+<div class="row">
+<div class="col-sm-12">Código
+<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.codigo" placeholder="buscar">
+</div>
+</div>
+</th>
+<th>
+<div class="row">
+<div class="col-sm-3">
+<div class="divider"></div>Empresa
+<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.nombreEmpresa" placeholder="buscar">
+</div>
+</div>
+</th>
+<th>
+<div class="row">
+<div class="col-sm-12">
+<div class="divider"></div>Departamento
+<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.nombreDepartamento" placeholder="buscar">
+</div>
+</div>
+</th>
+<th>
+<div class="row">
+<div class="col-sm-12">
+<div class="divider"></div>Estado
+<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.estado" placeholder="buscar">
+</div>
+</div>
+</th>
+<th>
+<div class="row">
+<div class="col-sm-12">
+<div class="divider"></div>Fecha
+<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.createdAt" placeholder="buscar">
+</div>
+</div>
+
+</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody *ngFor="let dato of Datos | filterBy: FiltrosTabla">
+<tr>
+<td>{{dato.codigo}}</td>
+<td>{{dato.nombreEmpresa}}</td>
+<td>{{dato.nombreDepartamento}}</td>
+<td>{{dato.estado}}</td>
+<td>{{dato.createdAt | date:'dd/MM/yyyy'}}</td>
+<td></td>
+
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
