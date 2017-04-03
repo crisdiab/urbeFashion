@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'urbe-modal-actualizar',
@@ -8,10 +8,18 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ModalActualizarComponent implements OnInit {
 
   @Input() ocultar:Boolean;
+  @Output() salida =  new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  funcion(){
+    this.salida.emit({
+      mensaje:'dfdf'
+    })
+
   }
 
 }

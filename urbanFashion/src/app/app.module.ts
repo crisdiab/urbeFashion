@@ -19,6 +19,7 @@ import {EmpresaService} from "./Services/empresa.service";
 import {DepartamentoService} from "./Services/departamento.service";
 import { LoadingComponent } from './loading/loading.component';
 import { ModalActualizarComponent } from './modal-actualizar/modal-actualizar.component';
+import {TablaCodigosComponent} from "./tabla-codigos/tabla-codigos.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import { ModalActualizarComponent } from './modal-actualizar/modal-actualizar.co
     ListarCodigosComponent,
     LoadingComponent,
     ModalActualizarComponent,
+    TablaCodigosComponent
+
   ],
 
   imports: [
@@ -35,7 +38,8 @@ import { ModalActualizarComponent } from './modal-actualizar/modal-actualizar.co
     FormsModule,
     HttpModule,
     RutasAppModule,
-    Ng2FilterPipeModule
+    Ng2FilterPipeModule,
+
   ],
   providers: [
     MasterUrlService,

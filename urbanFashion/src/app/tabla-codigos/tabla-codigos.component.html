@@ -9,9 +9,9 @@
 <table class="table table-bordered " >
 <thead>
 <tr>
-<th>
+<th >
 <div class="row">
-<div class="col-sm-12">Código
+<div  class="col-sm-12">Código
 <input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.codigo" placeholder="buscar">
 </div>
 </div>
@@ -59,7 +59,10 @@
 <td>{{dato.nombreDepartamento}}</td>
 <td>{{dato.estado}}</td>
 <td>{{dato.createdAt | date:'dd/MM/yyyy'}}</td>
-<td></td>
+<td><urbe-modal-actualizar [ocultar]="true"
+                           (salida)="ver($event)"
+
+></urbe-modal-actualizar></td>
 
 </tr>
 

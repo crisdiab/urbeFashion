@@ -11,6 +11,7 @@ import {Response} from "@angular/http";
 export class ListarCodigosComponent implements OnInit {
 
   codigos:any=[];
+  mostrarCdigo=false
   deshabilitar={
     botonEditar:true,
   };
