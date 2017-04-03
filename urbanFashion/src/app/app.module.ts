@@ -18,6 +18,7 @@ import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import {EmpresaService} from "./Services/empresa.service";
 import {DepartamentoService} from "./Services/departamento.service";
 import { LoadingComponent } from './loading/loading.component';
+import { ModalActualizarComponent } from './modal-actualizar/modal-actualizar.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { LoadingComponent } from './loading/loading.component';
     InicioComponent,
     ListarCodigosComponent,
     LoadingComponent,
+    ModalActualizarComponent,
   ],
 
   imports: [
