@@ -21,6 +21,9 @@ import { LoadingComponent } from './loading/loading.component';
 import { ModalActualizarComponent } from './modal-actualizar/modal-actualizar.component';
 import {TablaCodigosComponent} from "./tabla-codigos/tabla-codigos.component";
 
+import { ModalConfirmarComponent } from './modal-confirmar/modal-confirmar.component';
+import {ToasterModule} from "angular2-toaster";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +32,8 @@ import {TablaCodigosComponent} from "./tabla-codigos/tabla-codigos.component";
     ListarCodigosComponent,
     LoadingComponent,
     ModalActualizarComponent,
-    TablaCodigosComponent
+    TablaCodigosComponent,
+    ModalConfirmarComponent
 
   ],
 
@@ -39,6 +43,7 @@ import {TablaCodigosComponent} from "./tabla-codigos/tabla-codigos.component";
     HttpModule,
     RutasAppModule,
     Ng2FilterPipeModule,
+    ToasterModule
 
   ],
   providers: [

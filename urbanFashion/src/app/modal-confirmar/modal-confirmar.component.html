@@ -1,0 +1,24 @@
+<!--<a (click)="ocultar=!ocultar">Open Modal</a>-->
+
+<button class="btn btn-block btn-success"
+        (click)=" abrirModal()" type="button">Crear</button>
+
+<div [hidden]="ocultar" class="modalDialog">
+  <div>
+    <a (click)="ocultar=!ocultar" title="Close" class="close">X</a>
+    <h2>{{tituloModal}}</h2>
+    <p>{{Mensaje}}</p>
+    <span><h4>{{Codigo}}</h4></span>
+
+
+
+
+    <button class="btn btn-success" type="button" (click)="respuesta('acepto');ocultar=!ocultar"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Aceptar</button>
+    <button (click)="ocultar=!ocultar; respuesta('no acepto')" type="button" class="btn btn-danger">
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Cancelar</button>
+  </div>
+</div>
+
+
+<!--(ngSubmit)="actualizarEstadoCodigo(codigo)"-->
+

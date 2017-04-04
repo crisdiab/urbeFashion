@@ -11,7 +11,12 @@ export class TablaCodigosComponent implements OnInit {
   @Input() Datos:any=[];
   @Input() tituloLista:String;
 
-  @Input() verCodigo:Boolean;
+  @Input() ocultarCodigo:Boolean;
+  @Input() ocultarEmpresa:Boolean;
+  @Input() ocultarDepartamento:Boolean;
+  @Input() ocultarFecha:Boolean;
+  @Input() ocultarEstado:Boolean;
+  @Input() ocultarAccion:Boolean;
   FiltrosTabla: any = {
     codigo:'',
     estado:'',
@@ -25,8 +30,10 @@ export class TablaCodigosComponent implements OnInit {
   ngOnInit() {
   }
 
-  ver(evento){
+  ver(evento,dato){
     console.log('Viene este evento',evento)
+    console.log(dato)
+
   }
 
 
