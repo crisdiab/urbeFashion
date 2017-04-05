@@ -6,6 +6,7 @@ import { ModuleWithProviders }  from '@angular/core';
 import {InicioComponent} from "./inicio/inicio.component";
 import {CrearCodigoComponent} from "./crear-codigo/crear-codigo.component";
 import {ListarCodigosComponent} from "./listar-codigos/listar-codigos.component";
+import {AdminComponent} from "./admin/admin.component";
 
 
 
@@ -14,6 +15,7 @@ export const routes: Routes = [
   {path:'inicio', component: InicioComponent},
   {path:'crear', component: CrearCodigoComponent},
   {path:'listarc', component: ListarCodigosComponent},
+  {path:'admin', component: AdminComponent},
 ];
 
 export const RutasAppModule: ModuleWithProviders = RouterModule.forRoot(routes);

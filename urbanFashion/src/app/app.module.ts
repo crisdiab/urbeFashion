@@ -24,6 +24,7 @@ import { SortByAttributePipe } from 'ng2bln-sort-by-attribute-pipe'
 import { ModalConfirmarComponent } from './modal-confirmar/modal-confirmar.component';
 import {ToasterModule} from "angular2-toaster";
 import {Ng2PaginationModule, PaginatePipe, PaginationService} from 'ng2-pagination';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import {Ng2PaginationModule, PaginatePipe, PaginationService} from 'ng2-paginati
     TablaCodigosComponent,
     ModalConfirmarComponent,
     SortByAttributePipe,
+    AdminComponent,
 
 
 

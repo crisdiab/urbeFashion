@@ -167,9 +167,15 @@ codigoCreado:String='';
     if(valor!=''){
       console.log(valor);
       this.departamentos = this.empresas.filter(function (value) {
+
         return value.codigo==valor;
-      })
-     // console.log('departamentos',this.departamentos);
+      });
+      if(this.departamentos[0].departamentos.length==0){
+        this.departamentosFiltrados
+      }
+
+
+     console.log('departamentos',this.departamentos[0].departamentos);
       this.departamentosFiltrados=this.departamentos[0].departamentos;
     //  console.log( 'departamentos filtrados'  ,this.departamentosFiltrados)
     }
