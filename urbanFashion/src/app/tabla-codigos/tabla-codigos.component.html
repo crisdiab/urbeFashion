@@ -49,6 +49,15 @@
 </div>
 
 </th>
+  <th [hidden]="ocultarDescripcion">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="divider"></div>Descripción
+        <!--<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.createdAt" placeholder="buscar">-->
+      </div>
+    </div>
+
+  </th>
 <th [hidden]="ocultarAccion">Acción</th>
 </tr>
 </thead>
@@ -59,10 +68,11 @@
 <td [hidden]="ocultarDepartamento">{{dato.nombreDepartamento}}</td>
 <td [hidden]="ocultarEstado">{{dato.estado}}</td>
 <td [hidden]="ocultarFecha">{{dato.createdAt | date:'dd/MM/yyyy'}}</td>
+  <td [hidden]="ocultarDescripcion">{{dato.descripcion}}</td>
 <td [hidden]="ocultarAccion"><urbe-modal-actualizar [ocultar]="true"
-                           (salida)="ver($event,dato)"
+                                                    (salida)="ver($event,dato)">
 
-></urbe-modal-actualizar></td>
+</urbe-modal-actualizar></td>
 
 </tr>
 

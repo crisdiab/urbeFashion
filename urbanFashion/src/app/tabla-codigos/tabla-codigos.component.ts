@@ -1,4 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {CodigoService} from "../Services/codigo.service";
+import {Response} from "@angular/http";
+import {ToasterService} from "angular2-toaster";
 
 @Component({
   selector: 'urbe-tabla-codigos',
@@ -16,6 +19,7 @@ export class TablaCodigosComponent implements OnInit {
   @Input() ocultarDepartamento:Boolean;
   @Input() ocultarFecha:Boolean;
   @Input() ocultarEstado:Boolean;
+  @Input() ocultarDescripcion:Boolean;
   @Input() ocultarAccion:Boolean;
   FiltrosTabla: any = {
     codigo:'',
@@ -24,18 +28,63 @@ export class TablaCodigosComponent implements OnInit {
     nombreDepartamento:'',
     createdAt: ''
   };
-  constructor() { }
+  constructor(private _CodigoService:CodigoService,
+              private _toasterService: ToasterService
+  ) { }
 
 
   ngOnInit() {
   }
 
-  ver(evento,dato){
-    console.log('Viene este evento',evento)
-    console.log(dato)
+  ver(formulario, dato){
+    console.log('En el modal',formulario);
+    console.log(dato);
+    console.log('el id del dato', dato.id);
 
+    this._CodigoService.update(formulario,dato.id)
+      .subscribe(
+
+        (res: Response) => {
+          // console.log("No hubo Errores");
+          // console.log(res);
+          //codigo.formularioCerrado = !codigo.formularioCerrado;
+          console.log("Respuesta:", res.json());
+          this._CodigoService.get()
+            .subscribe(
+              (res: Response) => {
+                this.Datos = res.json();
+
+                console.log('codigos',this.Datos);
+                //console.log('codigos cero',this.codigos[0].codigo);
+                //var codP= this.codigos[0].codigo.substring(2,4);
+                //console.log('peridoo separado',codP)
+
+              },
+              (err) => {
+                console.log('no carga nada')
+                console.log(err);
+              }
+            )
+          console.log('estado actualizado satisfactoriamente',res.json());
+          //formulario.reset();
+          var toast : any = {
+            type: 'success',
+            title: 'Actualizado',
+            body: 'Estado actualizado correctamente',
+            showCloseButton: false,
+            //closeHtml: '<button>Close</button>'
+          };
+
+
+          this._toasterService.pop(toast);
+
+        },
+
+
+
+        (err) => {
+          console.log("Ocurrio un error", err);
+        }
+      );
   }
-
-
-
 }

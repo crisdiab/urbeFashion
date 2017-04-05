@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'urbe-modal-actualizar',
@@ -6,6 +7,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./modal-actualizar.component.css']
 })
 export class ModalActualizarComponent implements OnInit {
+
+  estadoSeleccionado:string;
+  descripcionCodigo:string;
 
   @Input() ocultar:Boolean;
   @Output() salida =  new EventEmitter();
@@ -15,11 +19,8 @@ export class ModalActualizarComponent implements OnInit {
   ngOnInit() {
   }
 
-  funcion(){
-    this.salida.emit({
-      mensaje:'dfdf'
-    })
-
+  actualizar(formulario:NgForm){
+    this.salida.emit(formulario.value);
   }
 
 }
