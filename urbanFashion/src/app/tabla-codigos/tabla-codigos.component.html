@@ -5,80 +5,84 @@
 <div class="col-md-10">
 
 <h2>{{tituloLista}}</h2>
+<div class="container">
+  <table class="table table-bordered " >
+    <thead>
+    <tr>
+      <th [hidden]="ocultarCodigo">
+        <div class="row">
+          <div  class="col-sm-12">Código
+            <input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.codigo" placeholder="buscar">
+          </div>
+        </div>
+      </th>
+      <th [hidden]="ocultarEmpresa">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="divider"></div>Empresa
+            <input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.nombreEmpresa" placeholder="buscar">
+          </div>
+        </div>
+      </th>
+      <th [hidden]="ocultarDepartamento">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="divider"></div>Departamento
+            <input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.nombreDepartamento" placeholder="buscar">
+          </div>
+        </div>
+      </th>
+      <th [hidden]="ocultarEstado">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="divider"></div>Estado
+            <input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.estado" placeholder="buscar">
+          </div>
+        </div>
+      </th>
+      <th [hidden]="ocultarFecha">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="divider"></div>Fecha
+            <input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.createdAt" placeholder="buscar">
+          </div>
+        </div>
 
-<table class="table table-bordered " >
-<thead>
-<tr>
-<th [hidden]="ocultarCodigo">
-<div class="row">
-<div  class="col-sm-12">Código
-<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.codigo" placeholder="buscar">
-</div>
-</div>
-</th>
-<th [hidden]="ocultarEmpresa">
-<div class="row">
-<div class="col-sm-3">
-<div class="divider"></div>Empresa
-<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.nombreEmpresa" placeholder="buscar">
-</div>
-</div>
-</th>
-<th [hidden]="ocultarDepartamento">
-<div class="row">
-<div class="col-sm-12">
-<div class="divider"></div>Departamento
-<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.nombreDepartamento" placeholder="buscar">
-</div>
-</div>
-</th>
-<th [hidden]="ocultarEstado">
-<div class="row">
-<div class="col-sm-12">
-<div class="divider"></div>Estado
-<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.estado" placeholder="buscar">
-</div>
-</div>
-</th>
-<th [hidden]="ocultarFecha">
-<div class="row">
-<div class="col-sm-12">
-<div class="divider"></div>Fecha
-<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.createdAt" placeholder="buscar">
-</div>
+      </th>
+      <th [hidden]="ocultarDescripcion">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="divider"></div>Descripción
+            <!--<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.createdAt" placeholder="buscar">-->
+          </div>
+        </div>
+
+      </th>
+      <th [hidden]="ocultarAccion">Acción</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let dato of Datos |  sortByAttr : Ordenar | filterBy: FiltrosTabla | paginate: { itemsPerPage: 10, currentPage: p } ">
+    <tr>
+      <td [hidden]="true">{{dato.id}}</td>
+      <td [hidden]="ocultarCodigo">{{dato.codigo}}</td>
+      <td [hidden]="ocultarEmpresa">{{dato.nombreEmpresa}}</td>
+      <td [hidden]="ocultarDepartamento">{{dato.nombreDepartamento}}</td>
+      <td [hidden]="ocultarEstado">{{dato.estado}}</td>
+      <td [hidden]="ocultarFecha">{{dato.createdAt | date:'dd/MM/yyyy'}}</td>
+      <td [hidden]="ocultarDescripcion">{{dato.descripcion}}</td>
+      <td [hidden]="ocultarAccion"><urbe-modal-actualizar [ocultar]="true"
+                                                          (salida)="ver($event,dato)">
+
+      </urbe-modal-actualizar></td>
+
+    </tr>
+
+    </tbody>
+
+  </table>
+  <pagination-controls (pageChange)="p = $event" #api></pagination-controls>
 </div>
 
-</th>
-  <th [hidden]="ocultarDescripcion">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="divider"></div>Descripción
-        <!--<input class="colorLetra" type="text" [(ngModel)]="FiltrosTabla.createdAt" placeholder="buscar">-->
-      </div>
-    </div>
-
-  </th>
-<th [hidden]="ocultarAccion">Acción</th>
-</tr>
-</thead>
-<tbody *ngFor="let dato of Datos |  sortByAttr : Ordenar | filterBy: FiltrosTabla ">
-<tr>
-  <td [hidden]="true">{{dato.id}}</td>
-<td [hidden]="ocultarCodigo">{{dato.codigo}}</td>
-<td [hidden]="ocultarEmpresa">{{dato.nombreEmpresa}}</td>
-<td [hidden]="ocultarDepartamento">{{dato.nombreDepartamento}}</td>
-<td [hidden]="ocultarEstado">{{dato.estado}}</td>
-<td [hidden]="ocultarFecha">{{dato.createdAt | date:'dd/MM/yyyy'}}</td>
-  <td [hidden]="ocultarDescripcion">{{dato.descripcion}}</td>
-<td [hidden]="ocultarAccion"><urbe-modal-actualizar [ocultar]="true"
-                                                    (salida)="ver($event,dato)">
-
-</urbe-modal-actualizar></td>
-
-</tr>
-
-</tbody>
-</table>
 </div>
 
 </div>

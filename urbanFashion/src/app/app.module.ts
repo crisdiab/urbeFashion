@@ -23,6 +23,7 @@ import {TablaCodigosComponent} from "./tabla-codigos/tabla-codigos.component";
 import { SortByAttributePipe } from 'ng2bln-sort-by-attribute-pipe'
 import { ModalConfirmarComponent } from './modal-confirmar/modal-confirmar.component';
 import {ToasterModule} from "angular2-toaster";
+import {Ng2PaginationModule, PaginatePipe, PaginationService} from 'ng2-pagination';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,8 @@ import {ToasterModule} from "angular2-toaster";
     ModalConfirmarComponent,
     SortByAttributePipe,
 
+
+
   ],
 
   imports: [
@@ -44,7 +47,8 @@ import {ToasterModule} from "angular2-toaster";
     HttpModule,
     RutasAppModule,
     Ng2FilterPipeModule,
-    ToasterModule
+    ToasterModule,
+    Ng2PaginationModule
 
   ],
   providers: [
@@ -55,8 +59,10 @@ import {ToasterModule} from "angular2-toaster";
     PrendaService,
     TejidoService,
     CantidadService,
-    CodigoService
+    CodigoService,
+    PaginationService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

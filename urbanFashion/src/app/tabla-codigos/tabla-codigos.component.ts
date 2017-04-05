@@ -6,7 +6,9 @@ import {ToasterService} from "angular2-toaster";
 @Component({
   selector: 'urbe-tabla-codigos',
   templateUrl: './tabla-codigos.component.html',
-  styleUrls: ['./tabla-codigos.component.css']
+  styleUrls: ['./tabla-codigos.component.css'],
+
+
 })
 export class TablaCodigosComponent implements OnInit {
 
