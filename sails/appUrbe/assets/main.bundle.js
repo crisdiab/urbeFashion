@@ -544,6 +544,9 @@ var CrearCodigoComponent = (function () {
             .subscribe(function (res) {
             _this.empresas = res.json();
             console.log('empresas', res.json());
+            _this.empresas = _this.empresas.filter(function (value) {
+                return value.estado == 'activo';
+            });
         }, function (err) {
             console.log(err);
         });
@@ -552,6 +555,9 @@ var CrearCodigoComponent = (function () {
         this._PrendaService.get()
             .subscribe(function (res) {
             _this.prendas = res.json();
+            _this.prendas = _this.prendas.filter(function (value) {
+                return value.estado == 'activo';
+            });
             console.log('prendas', _this.prendas);
         }, function (err) {
             console.log(err);
