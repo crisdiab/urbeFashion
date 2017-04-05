@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="13186d76-d75a-4668-85b9-fb5102bc200f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/app.module.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.css" afterPath="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.html" afterPath="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/modal-actualizar/modal-actualizar.component.html" afterPath="$PROJECT_DIR$/urbanFashion/src/app/modal-actualizar/modal-actualizar.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/modal-actualizar/modal-actualizar.component.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/modal-actualizar/modal-actualizar.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/tabla-codigos/tabla-codigos.component.html" afterPath="$PROJECT_DIR$/urbanFashion/src/app/tabla-codigos/tabla-codigos.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/tabla-codigos/tabla-codigos.component.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/tabla-codigos/tabla-codigos.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sails/appUrbe/api/models/Empresa.js" afterPath="$PROJECT_DIR$/sails/appUrbe/api/models/Empresa.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sails/appUrbe/api/models/Prenda.js" afterPath="$PROJECT_DIR$/sails/appUrbe/api/models/Prenda.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts" afterPath="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -27,104 +22,87 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="listar-codigos.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.ts">
+      <file leaf-file-name="crear-codigo.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="-96">
+              <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/admin/admin.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="53" column="139" lean-forward="false" selection-start-line="53" selection-start-column="139" selection-end-line="53" selection-end-column="139" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Periodo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sails/appUrbe/api/models/Periodo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="25" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/admin/admin.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="master-url.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/master-url.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Empresa.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sails/appUrbe/api/models/Empresa.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
-                <marker date="1491235880015" expanded="false" signature="1371:2062" ph="{...}" />
+                <marker date="1491414494492" expanded="true" signature="236:664" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/app.module.ts">
+      <file leaf-file-name="Prenda.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sails/appUrbe/api/models/Prenda.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+            <state relative-caret-position="14">
+              <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tabla-codigos.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/tabla-codigos/tabla-codigos.component.ts">
+      <file leaf-file-name="crear-codigo.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listar-codigos.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tabla-codigos.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/tabla-codigos/tabla-codigos.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="62" column="47" lean-forward="false" selection-start-line="62" selection-start-column="47" selection-end-line="62" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modal-actualizar.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/modal-actualizar/modal-actualizar.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modal-actualizar.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/modal-actualizar/modal-actualizar.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loading.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/loading/loading.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loading.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/loading/loading.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="21" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="listar-codigos.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-1077">
+              <caret line="141" column="40" lean-forward="false" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
+              <folding>
+                <element signature="e#2351#2401#0" expanded="false" />
+                <element signature="e#2889#2939#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,7 +124,6 @@
       <list>
         <option value="$PROJECT_DIR$/urbanFashion/src/index.html" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/master-url.service.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/tipo-prenda.service.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/tejido.service.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/inicio/inicio.component.html" />
@@ -155,7 +132,6 @@
         <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/prenda.service.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/codigo.service.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/cantidad.service.ts" />
-        <option value="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.html" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/listar-codigos/listar-codigos.component.css" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/app.module.ts" />
@@ -165,6 +141,10 @@
         <option value="$PROJECT_DIR$/urbanFashion/src/app/modal-actualizar/modal-actualizar.component.html" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/tabla-codigos/tabla-codigos.component.ts" />
         <option value="$PROJECT_DIR$/urbanFashion/src/app/modal-actualizar/modal-actualizar.component.ts" />
+        <option value="$PROJECT_DIR$/sails/appUrbe/api/models/Empresa.js" />
+        <option value="$PROJECT_DIR$/sails/appUrbe/api/models/Prenda.js" />
+        <option value="$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts" />
+        <option value="$PROJECT_DIR$/urbanFashion/src/app/Services/master-url.service.ts" />
       </list>
     </option>
   </component>
@@ -178,9 +158,10 @@
     <handled-path value="$PROJECT_DIR$/urbanFashion/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
     <option name="width" value="1924" />
-    <option name="height" value="1038" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -197,6 +178,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -312,7 +294,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modal-actualizar" />
+              <option name="myItemId" value="crear-codigo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,19 +308,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="urbanFashion" />
+              <option name="myItemId" value="sails" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="loading" />
+              <option name="myItemId" value="appUrbe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -352,25 +326,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="urbanFashion" />
+              <option name="myItemId" value="sails" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="appUrbe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urbeFashion" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="urbeFashion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="listar-codigos" />
+              <option name="myItemId" value="sails" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appUrbe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -481,11 +476,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37632000" />
+    <option name="totallyTimeSpent" value="38743000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1924" height="1038" extended-state="0" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1924" height="1048" extended-state="0" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24921301" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -494,7 +488,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32882413" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32955715" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -527,21 +521,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/cantidad.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/periodo.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/tipo-prenda.service.ts" />
     <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/tejido.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -649,14 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/master-url.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/tejido.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -692,12 +663,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="143" column="5" lean-forward="false" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
-          <folding>
-            <element signature="n#div#0;n#nav#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#nav#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#nav#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -747,19 +712,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="3" column="20" lean-forward="false" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="51" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-            <element signature="n#!!block;n#ngOnInit#0;n#CrearCodigoComponent#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="-96">
+          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -767,7 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -775,7 +729,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -783,9 +736,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
           <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding>
-            <marker date="1491235880015" expanded="false" signature="1371:2062" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -793,7 +743,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="4" selection-end-line="21" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -801,7 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -817,7 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -833,7 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -841,6 +787,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="355">
           <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sails/appUrbe/api/models/Periodo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sails/appUrbe/api/models/Empresa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <marker date="1491414494492" expanded="true" signature="236:664" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sails/appUrbe/api/models/Prenda.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14">
+          <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/crear-codigo/crear-codigo.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1077">
+          <caret line="141" column="40" lean-forward="false" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
+          <folding>
+            <element signature="e#2351#2401#0" expanded="false" />
+            <element signature="e#2889#2939#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/urbanFashion/src/app/Services/master-url.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>

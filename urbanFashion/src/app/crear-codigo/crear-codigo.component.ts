@@ -124,6 +124,9 @@ codigoCreado:String='';
         (res: Response) => {
           this.empresas = res.json();
          console.log('empresas',res.json());
+         this.empresas = this.empresas.filter(function (value) {
+           return value.estado=='activo'
+         });
         },
         (err) => {
           console.log(err);
@@ -135,7 +138,11 @@ codigoCreado:String='';
       .subscribe(
         (res: Response) => {
           this.prendas = res.json();
+          this.prendas= this.prendas.filter(function (value) {
+            return value.estado=='activo'
+          })
          console.log('prendas', this.prendas)
+
         },
         (err) => {
           console.log(err);

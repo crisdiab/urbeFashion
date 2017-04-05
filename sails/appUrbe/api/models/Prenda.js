@@ -8,21 +8,27 @@
 module.exports = {
 
   attributes: {
-    
+
     nombre:{
       type:'string',
       required:true
     },
-    
+
     codigo:{
       type:'string',
       unique:true
     },
-    
+
     cantidadesPrenda:{
       collection:'Cantidad',
       via:'idPrenda'
+    },
+    estado:{
+      type:'string',
+      defaultsTo:'activo',
+      enum:['activo','inactivo']
     }
+
 
   }
 };

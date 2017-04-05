@@ -8,27 +8,33 @@
 module.exports = {
 
   attributes: {
-    
+
    nombre:{
      type:'string',
      required:true
    },
-   
+
    codigo:{
       type:'string',
-      required:true, 
+      required:true,
       unique:true
     },
-   
+
    departamentos:{
      collection:'Departamento',
      via:'idEmpresaDepartamento'
    },
-   
+
    codigos:{
      collection:'Codigo',
      via:'idEmpresaCodigo'
-   }
+   },
+    estado:{
+      type:'string',
+      defaultsTo:'activo',
+      enum:['activo','inactivo']
+    }
+
 
   }
 };
