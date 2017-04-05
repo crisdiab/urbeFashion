@@ -31,12 +31,7 @@ export class ListarCodigosComponent implements OnInit {
     this._CodigoService.get()
       .subscribe(
         (res: Response) => {
-          this.codigos = res.json()
-            .map((value) => {
-
-              value.descripcion = 'no tiene';
-              return value;
-            });
+          this.codigos = res.json();
 
           console.log('codigos',this.codigos);
           //console.log('codigos cero',this.codigos[0].codigo);
