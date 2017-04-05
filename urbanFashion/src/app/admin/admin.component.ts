@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
- tituloAdmin:String= 'Seccion de Administracion'
+ tituloAdmin:String= 'Area de Administracion';
   constructor() { }
 
   ngOnInit() {

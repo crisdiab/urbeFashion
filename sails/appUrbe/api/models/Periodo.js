@@ -8,15 +8,20 @@
 module.exports = {
 
   attributes: {
-    
+
     periodo:{
       type: 'string',
       required:true
     },
-    
+
     cantidadesPeriodo:{
       collection:'Cantidad',
       via:'idPeriodo'
+    },
+    estado:{
+      type:'string',
+      defaultsTo:'activo',
+      enum:['activo','inactivo']
     }
 
   }

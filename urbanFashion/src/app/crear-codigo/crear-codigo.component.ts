@@ -102,19 +102,28 @@ codigoCreado:String='';
       .subscribe(
         (res: Response) => {
           this.periodos = res.json();
-         // console.log('periodos',res.json());
+
+
+         console.log('periodos antes',res.json());
+          this.periodos= this.periodos.filter(function (value) {
+            return value.estado=='activo';
+          })
+
+          console.log('periodos despues',this.periodos);
         },
         (err) => {
           console.log(err);
         }
       );
     //</editor-fold>
+
+
     //<editor-fold desc="Llamar a todas las empresas">
     this._EmpresaService.get()
       .subscribe(
         (res: Response) => {
           this.empresas = res.json();
-         // console.log('empresas',res.json());
+         console.log('empresas',res.json());
         },
         (err) => {
           console.log(err);
@@ -126,7 +135,7 @@ codigoCreado:String='';
       .subscribe(
         (res: Response) => {
           this.prendas = res.json();
-         // console.log('prendas', this.prendas)
+         console.log('prendas', this.prendas)
         },
         (err) => {
           console.log(err);
@@ -138,7 +147,7 @@ codigoCreado:String='';
       .subscribe(
         (res: Response) => {
           this.tejidos = res.json();
-         // console.log('tejidos', this.tejidos)
+         console.log('tejidos', this.tejidos)
         },
         (err) => {
           console.log(err);
@@ -151,13 +160,15 @@ codigoCreado:String='';
       .subscribe(
         (res: Response) => {
           this.cantidades = res.json();
-         // console.log('cantidades', this.cantidades)
+         console.log('cantidades', this.cantidades)
         },
         (err) => {
           console.log(err);
         }
       );
     //</editor-fold >
+
+
   }
 
   obtenerDepartamento(valor){
