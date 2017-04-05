@@ -541,13 +541,25 @@ codigoCreado:String='';
               title: 'Creado',
               body: 'Codigo generado correctamente',
               showCloseButton: true,
-              closeHtml: '<button>Close</button>'
+              // closeHtml: '<button>Close</button>'
             };
 
 
             this._toasterService.pop(toast);
           },
           (err) => {
+            this.modalOculto=false;
+            this.openModal=true;
+            var toast : any = {
+              type: 'error',
+              title: 'Lo Sentimos',
+              body: 'Ocurrió un problema, inténtelo de nuevo',
+              showCloseButton: true,
+              // closeHtml: '<button>Close</button>'
+            };
+
+
+            this._toasterService.pop(toast);
             console.log('No se creo el codigo',err);
           }
         )

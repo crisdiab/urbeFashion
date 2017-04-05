@@ -20,7 +20,7 @@ import {DepartamentoService} from "./Services/departamento.service";
 import { LoadingComponent } from './loading/loading.component';
 import { ModalActualizarComponent } from './modal-actualizar/modal-actualizar.component';
 import {TablaCodigosComponent} from "./tabla-codigos/tabla-codigos.component";
-
+import { SortByAttributePipe } from 'ng2bln-sort-by-attribute-pipe'
 import { ModalConfirmarComponent } from './modal-confirmar/modal-confirmar.component';
 import {ToasterModule} from "angular2-toaster";
 
@@ -33,7 +33,8 @@ import {ToasterModule} from "angular2-toaster";
     LoadingComponent,
     ModalActualizarComponent,
     TablaCodigosComponent,
-    ModalConfirmarComponent
+    ModalConfirmarComponent,
+    SortByAttributePipe,
 
   ],
 

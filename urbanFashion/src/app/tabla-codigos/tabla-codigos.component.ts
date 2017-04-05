@@ -12,6 +12,7 @@ export class TablaCodigosComponent implements OnInit {
 
 
   @Input() Datos:any=[];
+
   @Input() tituloLista:String;
 
   @Input() ocultarCodigo:Boolean;
@@ -86,5 +87,10 @@ export class TablaCodigosComponent implements OnInit {
           console.log("Ocurrio un error", err);
         }
       );
+  }
+  Ordenar: any = {
+    sortByCol: 'id', // object attribute's name to sort by
+    sortDir: 'desc',     // 'asc' or 'desc'
+    sortType: 'Number'  // 'String', 'Number', or 'Date'
   }
 }

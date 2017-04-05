@@ -61,8 +61,9 @@
 <th [hidden]="ocultarAccion">Acción</th>
 </tr>
 </thead>
-<tbody *ngFor="let dato of Datos | filterBy: FiltrosTabla">
+<tbody *ngFor="let dato of Datos |  sortByAttr : Ordenar | filterBy: FiltrosTabla ">
 <tr>
+  <td [hidden]="true">{{dato.id}}</td>
 <td [hidden]="ocultarCodigo">{{dato.codigo}}</td>
 <td [hidden]="ocultarEmpresa">{{dato.nombreEmpresa}}</td>
 <td [hidden]="ocultarDepartamento">{{dato.nombreDepartamento}}</td>
