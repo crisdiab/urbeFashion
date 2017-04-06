@@ -17,7 +17,7 @@
               <select class="form-control" id="estado1"
                       required
                       [(ngModel)]="estadoSeleccionado" name="estado"
-                      #estado = "ngModel">
+                      #estado="ngModel">
                 <option>pendiente</option>
                 <option>aprobado</option>
                 <option>reprobado</option>
@@ -29,13 +29,14 @@
           <textarea cols="45" rows="5"
                     required
                     [(ngModel)]="descripcionCodigo" name="descripcion"
-                    #descripcion = "ngModel">
+                    #descripcion="ngModel">
           </textarea>
         </div>
       </form>
     </form>
     <button class="btn btn-success" (click)="actualizar(NuevoEstadoForm)">Aceptar</button>
     <button (click)="ocultar=!ocultar" class="btn btn-warning">
-    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>cerrar</button>
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>cerrar
+    </button>
   </div>
 </div>
