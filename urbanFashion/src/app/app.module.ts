@@ -17,15 +17,14 @@ import {CodigoService} from "./Services/codigo.service";
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import {EmpresaService} from "./Services/empresa.service";
 import {DepartamentoService} from "./Services/departamento.service";
-import { LoadingComponent } from './loading/loading.component';
-import { ModalActualizarComponent } from './modal-actualizar/modal-actualizar.component';
-import {TablaCodigosComponent} from "./tabla-codigos/tabla-codigos.component";
+import { LoadingComponent } from './Componentes/loading/loading.component';
+import { ModalActualizarComponent } from './Componentes/modal-actualizar/modal-actualizar.component';
+import {TablaCodigosComponent} from "./Componentes/tabla-codigos/tabla-codigos.component";
 import { SortByAttributePipe } from 'ng2bln-sort-by-attribute-pipe'
-import { ModalConfirmarComponent } from './modal-confirmar/modal-confirmar.component';
+import { ModalConfirmarComponent } from './Componentes/modal-confirmar/modal-confirmar.component';
 import {ToasterModule} from "angular2-toaster";
 import {Ng2PaginationModule, PaginatePipe, PaginationService} from 'ng2-pagination';
 import { AdminComponent } from './admin/admin.component';
-import { CrearEmpresaComponent } from './crear-empresa/crear-empresa.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,6 @@ import { CrearEmpresaComponent } from './crear-empresa/crear-empresa.component';
     ModalConfirmarComponent,
     SortByAttributePipe,
     AdminComponent,
-    CrearEmpresaComponent,
 
 
 
