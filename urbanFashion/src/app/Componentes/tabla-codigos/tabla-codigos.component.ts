@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CodigoService} from "../Services/codigo.service";
+
 import {Response} from "@angular/http";
 import {ToasterService} from "angular2-toaster";
+import {CodigoService} from "../../Services/codigo.service";
 
 @Component({
   selector: 'urbe-tabla-codigos',

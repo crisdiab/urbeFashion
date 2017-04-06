@@ -13,18 +13,20 @@ import {MasterUrlService} from "./Services/master-url.service";
 import {PrendaService} from "./Services/prenda.service";
 import {TejidoService} from "./Services/tejido.service";
 import {PeriodoService} from "./Services/periodo.service";
-import {CodigoService} from "./Services/codigo.service";
+
 import { Ng2FilterPipeModule } from 'ng2-filter-pipe';
 import {EmpresaService} from "./Services/empresa.service";
 import {DepartamentoService} from "./Services/departamento.service";
 import { LoadingComponent } from './Componentes/loading/loading.component';
 import { ModalActualizarComponent } from './Componentes/modal-actualizar/modal-actualizar.component';
-import {TablaCodigosComponent} from "./Componentes/tabla-codigos/tabla-codigos.component";
+
 import { SortByAttributePipe } from 'ng2bln-sort-by-attribute-pipe'
 import { ModalConfirmarComponent } from './Componentes/modal-confirmar/modal-confirmar.component';
 import {ToasterModule} from "angular2-toaster";
 import {Ng2PaginationModule, PaginatePipe, PaginationService} from 'ng2-pagination';
 import { AdminComponent } from './admin/admin.component';
+import {CodigoService} from "./Services/codigo.service";
+import {TablaCodigosComponent} from "./Componentes/tabla-codigos/tabla-codigos.component";
 
 @NgModule({
   declarations: [
