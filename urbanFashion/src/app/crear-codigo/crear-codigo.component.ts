@@ -9,6 +9,7 @@ import {CodigoService} from "../Services/codigo.service";
 import {EmpresaService} from "../Services/empresa.service";
 import {DepartamentoService} from "../Services/departamento.service";
 import {ToasterService} from "angular2-toaster";
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-crear-codigo',
@@ -43,7 +44,8 @@ codigoCreado:String='';
     codigo:'',
     idEmpresaCodigo:0,
     nombreEmpresa:'',
-    nombreDepartamento:''
+    nombreDepartamento:'',
+    fecha:''
   };
 
   periodos:any=[];
@@ -412,6 +414,8 @@ codigoCreado:String='';
   AbrirModalCrear(formulario:NgForm, respuesta){
     let cantidad='';
 
+    moment.locale('es')
+
     if(formulario.value.periodosEncontrados==''|| formulario.value.empresa2==''
       ||formulario.value.departamento2==''||formulario.value.tejido2==''||formulario.value.prenda2==''){
       var toast : any = {
@@ -447,10 +451,11 @@ codigoCreado:String='';
               this.codigoCreado=this.codigoPeriodo+formulario.value.prenda2+formulario.value.tejido2+'0001';
               console.log(typeof this.codigoCreado);
               //<editor-fold desc="crear objeto nuevo codigo">
-             this.nuevoCodigo.codigo = this.codigoCreado.toString();
+              this.nuevoCodigo.codigo = this.codigoCreado.toString();
               this.nuevoCodigo.idEmpresaCodigo = this.idEmpresa;
               this.nuevoCodigo.nombreEmpresa = this.nombreEmpresa;
               this.nuevoCodigo.nombreDepartamento = this.nombreDepartamento;
+              this.nuevoCodigo.fecha = moment().format('L') +'  '+ moment().format('LT');
 
               //</editor-fold>
 
@@ -483,10 +488,11 @@ codigoCreado:String='';
               this.codigoCreado=this.codigoPeriodo+formulario.value.prenda2+formulario.value.tejido2+ this.cantidadActualizada;
 
 
-             this.nuevoCodigo.codigo = this.codigoCreado.toString();
+              this.nuevoCodigo.codigo = this.codigoCreado.toString();
               this.nuevoCodigo.idEmpresaCodigo = this.idEmpresa;
               this.nuevoCodigo.nombreEmpresa = this.nombreEmpresa;
               this.nuevoCodigo.nombreDepartamento = this.nombreDepartamento;
+              this.nuevoCodigo.fecha = moment().format('L') +'  '+ moment().format('LT');
 
             }
 
@@ -604,7 +610,8 @@ codigoCreado:String='';
         codigo:'',
         idEmpresaCodigo:0,
         nombreEmpresa:'',
-        nombreDepartamento:''
+        nombreDepartamento:'',
+        fecha:''
       };
       // this.seleccionados = {
       //   periodo:'',

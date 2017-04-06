@@ -32,11 +32,11 @@
           <div class="form-group">
             <div class="col-sm-offset-4 col-sm-8">
               <urbe-modal-confirmar [ocultar]="openModal"
-                                    <!--(Respuesta)="CrearCodigo(NuevoCodigoForm,$event)"-->
-                                    <!--[tituloModal]="'Confirmacion'"-->
-                                    <!--[Mensaje]="'Se creara el siguiente codigo'"-->
-                                    <!--[Codigo]="codigoCreado"-->
-                                    <!--(btnAbrir)="AbrirModalCrear(NuevoCodigoForm,$event)"-->
+                                    (Respuesta)="crearEmpresa(NuevaEmpresaForm,$event)"
+                                    [tituloModal]="'Confirmacion'"
+                                    [Mensaje]="'Se creara el siguiente codigo'"
+                                    [Codigo]="codigoCreado"
+                                    (btnAbrir)="AbrirModalCrear(NuevaEmpresaForm,$event)"
               ></urbe-modal-confirmar>
             </div>
           </div>

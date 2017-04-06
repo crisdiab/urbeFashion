@@ -30,7 +30,7 @@ export class TablaCodigosComponent implements OnInit {
     estado:'',
     nombreEmpresa:'',
     nombreDepartamento:'',
-    createdAt: ''
+    fecha:''
   };
   constructor(private _CodigoService:CodigoService,
               private _toasterService: ToasterService
