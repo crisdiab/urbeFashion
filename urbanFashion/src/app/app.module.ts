@@ -25,6 +25,7 @@ import { ModalConfirmarComponent } from './modal-confirmar/modal-confirmar.compo
 import {ToasterModule} from "angular2-toaster";
 import {Ng2PaginationModule, PaginatePipe, PaginationService} from 'ng2-pagination';
 import { AdminComponent } from './admin/admin.component';
+import { CrearEmpresaComponent } from './crear-empresa/crear-empresa.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { AdminComponent } from './admin/admin.component';
     ModalConfirmarComponent,
     SortByAttributePipe,
     AdminComponent,
+    CrearEmpresaComponent,
 
 
 

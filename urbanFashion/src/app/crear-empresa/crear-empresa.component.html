@@ -1,0 +1,212 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+
+      <h1>{{titulo}}</h1>
+
+      <form class="" #NuevaEmpresaForm="ngForm">
+
+        <div class="form-horizontal">
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" for="nombreEmp">Nombre Empresa</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="nombreEmp"
+                     required
+                     [(ngModel)]="nuevaEmpresa.nombre" name="nombreEmpresa"
+                     #nombreEmpresa="ngModel">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" for="codigoEmp">Código Empresa</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="codigoEmp"
+                     required
+                     [(ngModel)]="nuevaEmpresa.codigo" name="codigoEmpresa"
+                     #codigoEmpresa="ngModel">
+            </div>
+          </div>
+
+          <!--<div class="form-group">-->
+            <!--<label class="col-sm-4 control-label" for="empresa">Empresa</label>-->
+            <!--<div class="col-sm-8">-->
+              <!--<select class="form-control" id="empresa"-->
+                      <!--required-->
+                      <!--[(ngModel)]="seleccionados.empresa" name="empresa2"-->
+                      <!--(click)="obtenerDepartamento(seleccionados.empresa); obtenerIdEmpresa(seleccionados.empresa)"-->
+                      <!--#empresa2="ngModel"-->
+              <!--&gt;-->
+                <!--<option *ngFor="let empresa of empresas" [value]="empresa.codigo">{{empresa.nombre}}</option>-->
+              <!--</select>-->
+              <!--&lt;!&ndash;<div [hidden]="empresa2.valid || empresa2.pristine" class="alert alert-danger">&ndash;&gt;-->
+              <!--&lt;!&ndash;Debe seleccionar una empresa.&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<label class="col-sm-4 control-label" for="departamento3">Departamento</label>-->
+            <!--<div class="col-sm-8">-->
+              <!--<select class="form-control" id="departamento3"-->
+                      <!--required-->
+                      <!--[(ngModel)]="seleccionados.departamento" name="departamento2"-->
+                      <!--(click)="obtenerIdDepartamento(seleccionados.departamento)"-->
+                      <!--#departamento2="ngModel"-->
+
+              <!--&gt;-->
+
+                <!--<option *ngFor="let depar of departamentosFiltrados" [value]="depar.codigo">{{depar.nombre}}</option>-->
+              <!--</select>-->
+              <!--&lt;!&ndash;<div [hidden]="departamento2.valid || departamento2.pristine " class="alert alert-danger">&ndash;&gt;-->
+              <!--&lt;!&ndash;Debe seleccionar un departamento.&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<label class="col-sm-4 control-label" for="prenda">Prenda</label>-->
+            <!--<div class="col-sm-8">-->
+              <!--<select class="form-control" id="prenda"-->
+                      <!--required-->
+                      <!--[(ngModel)]="seleccionados.prenda" name="prenda2"-->
+                      <!--(click)="obtenerIdPrenda(seleccionados.prenda)"-->
+                      <!--#prenda2="ngModel"-->
+
+              <!--&gt;-->
+                <!--<option *ngFor="let prenda of prendas" [value]="prenda.codigo">{{prenda.nombre}}</option>-->
+              <!--</select>-->
+              <!--&lt;!&ndash;<div [hidden]="prenda2.valid || prenda2.pristine" class="alert alert-danger">&ndash;&gt;-->
+              <!--&lt;!&ndash;Debe seleccionar una prenda.&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<label class="col-sm-4 control-label" for="tejido">Tejido</label>-->
+            <!--<div class="col-sm-8">-->
+              <!--<select class="form-control" id="tejido"-->
+                      <!--required-->
+                      <!--[(ngModel)]="seleccionados.tejido" name="tejido2"-->
+                      <!--#tejido2="ngModel"-->
+                      <!--(click)="obtenerIdTejido(seleccionados.tejido)">-->
+                <!--<option *ngFor="let tejido of tejidos" [value]="tejido.codigo">{{tejido.nombre}}</option>-->
+              <!--</select>-->
+              <!--&lt;!&ndash;<div [hidden]="tejido2.valid || tejido2.pristine" class="alert alert-danger">&ndash;&gt;-->
+              <!--&lt;!&ndash;Debe seleccionar un tipo de Tejido.&ndash;&gt;-->
+              <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+          <!--</div>-->
+
+          <!--<div class="form-group">-->
+            <!--<div class="col-sm-offset-4 col-sm-8">-->
+              <!--&lt;!&ndash;<button [disabled]="disabledButtons.NuevoCodigoFormSubmitButton||!NuevoCodigoForm.valid"&ndash;&gt;-->
+              <!--&lt;!&ndash;class="btn btn-block btn-success"&ndash;&gt;-->
+              <!--&lt;!&ndash;(click)="AbrirModalCrear(NuevoCodigoForm) "&ndash;&gt;-->
+              <!--&lt;!&ndash;&gt;Crear&ndash;&gt;-->
+              <!--&lt;!&ndash;</button>&ndash;&gt;-->
+
+              <!--<urbe-modal-confirmar [ocultar]="openModal"-->
+                                    <!--(Respuesta)="CrearCodigo(NuevoCodigoForm,$event)"-->
+                                    <!--[tituloModal]="'Confirmacion'"-->
+                                    <!--[Mensaje]="'Se creara el siguiente codigo'"-->
+                                    <!--[Codigo]="codigoCreado"-->
+                                    <!--(btnAbrir)="AbrirModalCrear(NuevoCodigoForm,$event)"-->
+
+
+              <!--&gt;</urbe-modal-confirmar>-->
+
+
+
+            <!--</div>-->
+          <!--</div>-->
+
+        </div>
+      </form>
+
+    </div>
+    <div class="col-sm-2"></div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<h1>{{titulo}}</h1>-->
+
+<!--<div class="row">-->
+  <!--<div class="col-md-12">-->
+    <!--<form class="animated bounceIn" (ngSubmit)="crearArtista(NuevoArtistaForm)" #NuevoArtistaForm="ngForm">-->
+
+      <!--<div class="form-group">-->
+        <!--<label for="nombre">Nombre</label>-->
+        <!--<input type="text" class="form-control" id="nombre"-->
+               <!--required-->
+               <!--[(ngModel)]="nuevoArtista.nombre" name="nombre"-->
+               <!--#nombre="ngModel">-->
+        <!--<div [hidden]="nombre.valid || nombre.pristine"-->
+             <!--class="alert alert-danger">-->
+          <!--Nombre es requerido-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+
+        <!--<label><h3>Pais de Residencia</h3></label>-->
+
+        <!--&lt;!&ndash;<div class="animated slideInUp" [hidden]="!pais.errors">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;<span style="font-size:40px" class="bg-primary" *ngIf="pais.errors && (pais.dirty || pais.touched)" >Ingrese un Pais minimo con 4 caracteres </span>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+        <!--<input required-->
+               <!--minlength="4"-->
+               <!--type="text"-->
+               <!--class="form-control"-->
+               <!--placeholder="Digite un pais de residencia  como: Ecuador"-->
+               <!--name="pais"-->
+               <!--[(ngModel)]="nuevoArtista.paisResidencia"-->
+               <!--#pais="ngModel"-->
+               <!--#nombreElm>-->
+
+      <!--</div>-->
+      <!--<div class="form-group">-->
+        <!--<label for="power">Estilo</label>-->
+        <!--<select class="form-control" id="power"-->
+                <!--required-->
+                <!--[(ngModel)]="nuevoArtista.estilo" name="power"-->
+                <!--#power="ngModel">-->
+          <!--<option *ngFor="let pow of estilos" [value]="pow">{{pow}}</option>-->
+        <!--</select>-->
+        <!--<div [hidden]="power.valid || power.pristine" class="alert alert-danger">-->
+          <!--Power is required-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+      <!--<button [disabled]="disabledButtons.NuevoArtistaFormSubmitButton||!NuevoArtistaForm.valid" type="submit"-->
+
+              <!--class="btn btn-block btn-success">Crear-->
+
+      <!--</button>-->
+
+
+    <!--</form>-->
+    <!--<h3>Para ver todos los artistas registrados <span> <button [routerLink]="['/listaArtista']" class="btn btn-link">Click Aqui</button></span> </h3>-->
+
+  <!--</div>-->
+<!--</div>-->
