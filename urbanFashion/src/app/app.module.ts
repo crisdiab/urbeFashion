@@ -27,6 +27,7 @@ import {Ng2PaginationModule, PaginatePipe, PaginationService} from 'ng2-paginati
 import { AdminComponent } from './admin/admin.component';
 import {CodigoService} from "./Services/codigo.service";
 import {TablaCodigosComponent} from "./Componentes/tabla-codigos/tabla-codigos.component";
+import {CrearEmpresaComponent} from "./crear-empresa/crear-empresa.component";
 
 @NgModule({
   declarations: [
@@ -40,9 +41,7 @@ import {TablaCodigosComponent} from "./Componentes/tabla-codigos/tabla-codigos.c
     ModalConfirmarComponent,
     SortByAttributePipe,
     AdminComponent,
-
-
-
+    CrearEmpresaComponent
   ],
 
   imports: [
