@@ -11,6 +11,7 @@ import {CodigoService} from "../../Services/codigo.service";
 
 
 })
+
 export class TablaCodigosComponent implements OnInit {
 
 
@@ -32,6 +33,15 @@ export class TablaCodigosComponent implements OnInit {
     nombreDepartamento:'',
     fecha:''
   };
+  limpiarFiltros(){
+    this.FiltrosTabla= {
+      codigo:'',
+      estado:'',
+      nombreEmpresa:'',
+      nombreDepartamento:'',
+      fecha:''
+    };
+  }
   constructor(private _CodigoService:CodigoService,
               private _toasterService: ToasterService
   ) { }
