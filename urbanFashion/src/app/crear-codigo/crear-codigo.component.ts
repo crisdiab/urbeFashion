@@ -8,7 +8,7 @@ import {NgForm} from "@angular/forms";
 import {CodigoService} from "../Services/codigo.service";
 import {EmpresaService} from "../Services/empresa.service";
 import {DepartamentoService} from "../Services/departamento.service";
-import {ToasterService} from "angular2-toaster";
+import {ToasterConfig, ToasterService} from "angular2-toaster";
 import * as moment from 'moment';
 
 @Component({
@@ -24,8 +24,9 @@ export class CrearCodigoComponent implements OnInit {
   disabledButtons = {
     NuevoCodigoFormSubmitButton: false
   };
+
   codigoPeriodo:String;
-codigoCreado:String='';
+  codigoCreado:String='';
   seleccionados = {
     periodo:'',
     empresa:'',
@@ -118,8 +119,6 @@ codigoCreado:String='';
         }
       );
     //</editor-fold>
-
-
     //<editor-fold desc="Llamar a todas las empresas">
     this._EmpresaService.get()
       .subscribe(
@@ -176,12 +175,10 @@ codigoCreado:String='';
         }
       );
     //</editor-fold >
-
-
   }
 
   obtenerDepartamento(valor){
-   this.seleccionados.departamento=''
+    this.seleccionados.departamento='';
     this.departamentosFiltrados=[];
 
     if(valor!=''){
@@ -513,6 +510,8 @@ codigoCreado:String='';
 
   }
 
+
+
   CrearCodigo(formulario:NgForm,respuesta){
 
     if(respuesta=='acepto' ){
@@ -584,7 +583,7 @@ codigoCreado:String='';
               type: 'error',
               title: 'Lo Sentimos',
               body: 'Ocurrió un problema, inténtelo de nuevo',
-              showCloseButton: true,
+              showCloseButton: false,
               // closeHtml: '<button>Close</button>'
             };
 

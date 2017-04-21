@@ -9,11 +9,11 @@
     <h2>Actualizar Estado Prenda</h2>
 
     <form action="">
-      <form class="animated bounceIn" #NuevoEstadoForm="ngForm">
+      <form #NuevoEstadoForm="ngForm">
         <div class="form_horizontal">
           <div class="form-group">
-            <label class="col-sm-2 control-label" for="estado1">Estado</label>
-            <div class="col-sm-10">
+            <label class="col-sm-4 control-label" for="estado1">Estado</label>
+            <div class="col-sm-8">
               <select class="form-control" id="estado1"
                       required
                       [(ngModel)]="estadoSeleccionado" name="estado"
@@ -24,6 +24,34 @@
               </select>
             </div>
           </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" for="empre">Empresa</label>
+            <div class="col-sm-8">
+              <select class="form-control" id="empre"
+                      required
+                      [(ngModel)]="seleccionados.empresa" name="nombreEmpresa"
+                      (click)="obtenerDepartamento(seleccionados.empresa)"
+                      #nombreEmpresa="ngModel">
+                <option *ngFor="let empresa of empresas" [value]="empresa.nombre">{{empresa.nombre}}</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label" for="depar">Departamento</label>
+            <div class="col-sm-8">
+              <select class="form-control" id="depar"
+                      required
+                      [(ngModel)]="seleccionados.departamento" name="nombreDepartamento"
+                      #nombreDepartamento="ngModel">
+                      <!--(click)="obtenerIdDepartamento(seleccionados.departamento)"-->
+
+                <option *ngFor="let depar of departamentosFiltrados" [value]="depar.nombre">{{depar.nombre}}</option>
+              </select>
+            </div>
+          </div>
+
           <br>
           <h3>Agregar descripción</h3>
           <textarea cols="45" rows="5"
@@ -34,9 +62,11 @@
         </div>
       </form>
     </form>
-    <button class="btn btn-success" (click)="actualizar(NuevoEstadoForm)">Aceptar</button>
+    <button class="btn btn-success" (click)="actualizar(NuevoEstadoForm)">
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Aceptar
+    </button>
     <button (click)="ocultar=!ocultar" class="btn btn-warning">
-      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>cerrar
+      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancelar
     </button>
   </div>
 </div>

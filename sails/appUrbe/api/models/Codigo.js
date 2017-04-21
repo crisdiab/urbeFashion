@@ -29,7 +29,6 @@ module.exports = {
 
     nombreDepartamento:{
       type:'string',
-
     },
 
     idEmpresaCodigo:{
@@ -37,14 +36,17 @@ module.exports = {
     },
     descripcion:{
       type:'string'
+    },
+
+    fecha:{
+      type:'string'
     }
 
   },
+
   beforeCreate: function(valoresCreados,cb){
     valoresCreados.descripcion= 'No tiene';
-
     cb();
-
   }
 
 };

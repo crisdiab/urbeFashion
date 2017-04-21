@@ -11,9 +11,9 @@
       <h1>{{titulo}}</h1>
 
 
-      <pre>
-        <h1 align="center">{{nuevoCodigo.codigo }}</h1>
-      </pre>
+      <!--<pre>-->
+        <!--<h1 align="center">{{nuevoCodigo.codigo }}</h1>-->
+      <!--</pre>-->
 
       <div class="row">
 
@@ -53,30 +53,24 @@
                           >
                     <option *ngFor="let empresa of empresas" [value]="empresa.codigo">{{empresa.nombre}}</option>
                   </select>
-                  <!--<div [hidden]="empresa2.valid || empresa2.pristine" class="alert alert-danger">-->
-                    <!--Debe seleccionar una empresa.-->
-                  <!--</div>-->
                 </div>
               </div>
 
-                <div class="form-group">
-                  <label class="col-sm-4 control-label" for="departamento3">Departamento</label>
-                  <div class="col-sm-8">
-                    <select class="form-control" id="departamento3"
-                            required
-                            [(ngModel)]="seleccionados.departamento" name="departamento2"
-                            (click)="obtenerIdDepartamento(seleccionados.departamento)"
-                            #departamento2="ngModel"
-
-                    >
-
-                      <option *ngFor="let depar of departamentosFiltrados" [value]="depar.codigo">{{depar.nombre}}</option>
-                    </select>
-                    <!--<div [hidden]="departamento2.valid || departamento2.pristine " class="alert alert-danger">-->
-                      <!--Debe seleccionar un departamento.-->
-                    <!--</div>-->
-                  </div>
+              <div class="form-group">
+                <label class="col-sm-4 control-label" for="departamento3">Departamento</label>
+                <div class="col-sm-8">
+                  <select class="form-control" id="departamento3"
+                          required
+                          [(ngModel)]="seleccionados.departamento" name="departamento2"
+                          (click)="obtenerIdDepartamento(seleccionados.departamento)"
+                          #departamento2="ngModel"
+                  >
+                    <option *ngFor="let depar of departamentosFiltrados" [value]="depar.codigo">{{depar.nombre}}</option>
+                  </select>
                 </div>
+              </div>
+
+
 
               <div class="form-group">
                 <label class="col-sm-4 control-label" for="prenda">Prenda</label>
