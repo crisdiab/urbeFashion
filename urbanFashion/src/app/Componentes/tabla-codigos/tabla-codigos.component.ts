@@ -33,6 +33,8 @@ export class TablaCodigosComponent implements OnInit {
     nombreDepartamento:'',
     fecha:''
   };
+
+  buscarTodo:string='';
   limpiarFiltros(){
     this.FiltrosTabla= {
       codigo:'',
@@ -41,6 +43,19 @@ export class TablaCodigosComponent implements OnInit {
       nombreDepartamento:'',
       fecha:''
     };
+    this.buscarTodo='';
+    this._CodigoService.get()
+      .subscribe(
+        (res: Response) => {
+          this.Datos = res.json();
+
+        },
+        (err) => {
+          console.log('no carga nada')
+          console.log(err);
+        }
+      )
+
   }
   constructor(private _CodigoService:CodigoService,
               private _toasterService: ToasterService
@@ -68,17 +83,12 @@ export class TablaCodigosComponent implements OnInit {
               (res: Response) => {
                 this.Datos = res.json();
 
-                console.log('codigos',this.Datos);
-                //console.log('codigos cero',this.codigos[0].codigo);
-                //var codP= this.codigos[0].codigo.substring(2,4);
-                //console.log('peridoo separado',codP)
-
               },
               (err) => {
                 console.log('no carga nada')
                 console.log(err);
               }
-            )
+            );
           console.log('estado actualizado satisfactoriamente',res.json());
           //formulario.reset();
           var toast : any = {
@@ -105,5 +115,29 @@ export class TablaCodigosComponent implements OnInit {
     sortByCol: 'id', // object attribute's name to sort by
     sortDir: 'desc',     // 'asc' or 'desc'
     sortType: 'Number'  // 'String', 'Number', or 'Date'
+  }
+
+  buscar(busqueda:string){
+
+    this._CodigoService
+      .buscarT(busqueda)
+      .subscribe(res=>{
+
+        this.Datos=res.json();
+        console.log(this.Datos)
+      },
+      err=>{
+        console.log(err.json().mensaje)
+        var toast : any = {
+          type: 'error',
+          title: 'Error',
+          body: err.json().mensaje,
+          showCloseButton: false,
+          //closeHtml: '<button>Close</button>'
+        };
+
+
+        this._toasterService.pop(toast);
+      })
   }
 }

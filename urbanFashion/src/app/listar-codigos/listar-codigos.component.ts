@@ -33,11 +33,6 @@ export class ListarCodigosComponent implements OnInit {
         (res: Response) => {
           this.codigos = res.json();
 
-          console.log('codigos',this.codigos);
-          //console.log('codigos cero',this.codigos[0].codigo);
-          //var codP= this.codigos[0].codigo.substring(2,4);
-          //console.log('peridoo separado',codP)
-
         },
         (err) => {
           console.log('no carga nada')

@@ -4,6 +4,9 @@
     <div class="col-md-12">
 
       <h2>{{tituloLista}}</h2>
+      <input type="text"  [(ngModel)]="buscarTodo" placeholder="Tu busqueda aqui....">
+      <button class="btn btn-success btn-sm" (click)="buscar(buscarTodo)">Buscar</button>
+      <br><br>
       <button class="btn btn-info" (click)="limpiarFiltros()">Nueva Busqueda</button>
       <table class="table table-bordered " >
         <thead>

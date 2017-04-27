@@ -24,6 +24,9 @@ export class CodigoService {
   getOne(id){
     return this._http.get(this.url+this.modelo+id);
   }
+  buscarT(busqueda){
+    return this._http.get(this.url+this.modelo+'/buscarTodo/?busqueda='+busqueda);
+  }
 
   create(parametros){
     console.log('llega a crear con estos parametros',parametros)

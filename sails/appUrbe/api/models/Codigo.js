@@ -40,13 +40,37 @@ module.exports = {
 
     fecha:{
       type:'string'
+    },
+    nombrePrenda:{
+      type:'string'
     }
 
   },
 
   beforeCreate: function(valoresCreados,cb){
+
     valoresCreados.descripcion= 'No tiene';
-    cb();
+
+    var nombrep=valoresCreados.codigo;
+    console.log('nomrep',nombrep.substring(2,4));
+
+    var np;
+    Prenda
+      .find({
+      codigo:nombrep.substring(2,4)
+    })
+      .exec(function(err,prendaEncontrada){
+        if(err){
+          return res.serverError({mensaje:err})
+        }
+       np=prendaEncontrada[0].nombre;
+        valoresCreados.nombrePrenda=np
+        console.log(np)
+        console.log(valoresCreados.nombrePrenda)
+        cb();
+      });
+
+
   }
 
 };
